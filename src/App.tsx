@@ -10,6 +10,8 @@ import { GuidesPage } from './routes/guides';
 import { ExplorerPage } from './routes/explorer';
 
 import './App.css';
+import { Suspense } from 'react';
+import { Loader } from '@mantine/core';
 
 function App() {
   return (
@@ -17,14 +19,16 @@ function App() {
       <BrowserRouter>
         <Sidebar />
 
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/news' element={<NewsPage />} />
-          <Route path='/pokedex' element={<PokedexPage />} />
-          <Route path='/itemdex' element={<ItemdexPage />} />
-          <Route path='/guides' element={<GuidesPage />} />
-          <Route path='/explorer' element={<ExplorerPage />} />
-        </Routes>
+        <Suspense fallback={<Loader color='teal' />}>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/news' element={<NewsPage />} />
+            <Route path='/pokedex' element={<PokedexPage />} />
+            <Route path='/itemdex' element={<ItemdexPage />} />
+            <Route path='/guides' element={<GuidesPage />} />
+            <Route path='/explorer' element={<ExplorerPage />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </div>
   );
