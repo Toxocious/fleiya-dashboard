@@ -28,7 +28,7 @@ export function User() {
           'padding': theme.spacing.xs,
           'borderRadius': theme.radius.sm,
           'color':
-            theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
+            theme.colorScheme === 'dark' ? theme.colors.gray[4] : theme.black,
 
           '&:hover': {
             backgroundColor:
