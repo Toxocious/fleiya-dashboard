@@ -1,7 +1,8 @@
 import { Navbar } from '@mantine/core';
-import { SidebarHeader } from 'components/sidebar_header';
-import { MainLinks } from 'components/sidebar_links';
-import { User } from 'components/sidebar_user';
+
+import { SidebarHeader } from '~/components/sidebar_header';
+import { MainLinks } from '~/components/sidebar_links';
+import { User } from '~/components/sidebar_user';
 
 export const Sidebar = () => {
   return (

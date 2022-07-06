@@ -2,14 +2,14 @@ import { Suspense } from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { Loader } from '@mantine/core';
 
-import { Sidebar } from 'components/sidebar';
+import { Sidebar } from '~/components/sidebar';
 
-import { HomePage } from 'routes/home';
-import { NewsPage } from 'routes/news';
-import { PokedexPage } from 'routes/pokedex';
-import { ItemdexPage } from 'routes/itemdex';
-import { GuidesPage } from 'routes/guides';
-import { ExplorerPage } from 'routes/explorer';
+import { HomePage } from '~/routes/home';
+import { NewsPage } from '~/routes/news';
+import { PokedexPage } from '~/routes/pokedex';
+import { ItemdexPage } from '~/routes/itemdex';
+import { GuidesPage } from '~/routes/guides';
+import { ExplorerPage } from '~/routes/explorer';
 
 import './App.css';
 
