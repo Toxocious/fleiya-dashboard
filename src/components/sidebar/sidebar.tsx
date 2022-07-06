@@ -1,11 +1,9 @@
-import { BrowserRouter } from 'react-router-dom';
-
 import { Navbar } from '@mantine/core';
-import { SidebarHeader } from '../sidebar_header';
-import { MainLinks } from '../sidebar_links';
-import { User } from '../sidebar_user';
+import { SidebarHeader } from 'components/sidebar_header';
+import { MainLinks } from 'components/sidebar_links';
+import { User } from 'components/sidebar_user';
 
-export default function Sidebar() {
+export const Sidebar = () => {
   return (
     <Navbar p='xs' width={{ base: 300 }}>
       <Navbar.Section mt='xs'>
@@ -19,4 +17,4 @@ export default function Sidebar() {
       </Navbar.Section>
     </Navbar>
   );
-}
+};
