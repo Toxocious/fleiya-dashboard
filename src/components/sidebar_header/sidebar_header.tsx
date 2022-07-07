@@ -2,6 +2,8 @@ import { Tooltip, Group, Button, Box } from '@mantine/core';
 
 import { BrandGithub } from 'tabler-icons-react';
 
+import PokeOneIcon from '~/assets/PokeOne.ico';
+
 export function SidebarHeader() {
   return (
     <Box
@@ -17,7 +19,22 @@ export function SidebarHeader() {
       })}
     >
       <Group position='apart'>
-        <h2 style={{ margin: 0 }}>Fleiya</h2>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            gap: 12,
+          }}
+        >
+          <img
+            src={PokeOneIcon}
+            style={{
+              height: 36,
+              width: 36,
+            }}
+          />
+          <h2 style={{ margin: 0 }}>Fleiya</h2>
+        </div>
 
         <Tooltip label='View Source Code' openDelay={200} color='dark'>
           <Button
