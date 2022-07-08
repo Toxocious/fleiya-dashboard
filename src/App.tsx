@@ -10,6 +10,7 @@ import { PokedexPage } from '~/routes/pokedex';
 import { ItemdexPage } from '~/routes/itemdex';
 import { GuidesPage } from '~/routes/guides';
 import { ExplorerPage } from '~/routes/explorer';
+import { ChangelogPage } from './routes/changelog';
 
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
             <Route path='/itemdex' element={<ItemdexPage />} />
             <Route path='/guides' element={<GuidesPage />} />
             <Route path='/explorer' element={<ExplorerPage />} />
+            <Route path='/changelog' element={<ChangelogPage />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
