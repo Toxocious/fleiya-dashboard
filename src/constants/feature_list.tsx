@@ -1,38 +1,67 @@
 export const FeatureList = [
   {
     id: 0,
-    name: 'Feature Name',
+    name: 'Basic Battle Information',
     premium: false,
     description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    image:
-      'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80',
+      "Displays basic information about the enemy's active Pokemon during battle.",
+    image: 'src/assets/PokeOne.ico',
+  },
+  {
+    id: 1,
+    name: 'Dialogue Spammer',
+    premium: true,
+    description:
+      'Automatically spams through NPC dialogue, and attempts to answer dialogue prompts correctly.',
+    image: 'src/assets/PokeOne.ico',
   },
   {
     id: 2,
-    name: 'Feature Name',
+    name: 'Auto Buffer',
     premium: false,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    image:
-      'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80',
-  },
-  {
-    id: 2,
-    name: 'Feature Name',
-    premium: false,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    image:
-      'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80',
+      'Automatically select which buffs you want to use, and when to use them.',
+    image: 'src/assets/PokeOne.ico',
   },
   {
     id: 3,
-    name: 'Feature Name',
+    name: 'Trainer Card Bypass',
+    premium: false,
+    description:
+      "Allows you to view every person's Trainer Card, bypassing if they have it set to private.",
+    image: 'src/assets/PokeOne.ico',
+  },
+
+  {
+    id: 4,
+    name: 'Advanced Battle Information',
     premium: true,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    image:
-      'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80',
+      'Displays additional information as well as the information provided by Basic Battle Information.',
+    image: 'src/assets/PokeOne.ico',
+  },
+  {
+    id: 5,
+    name: 'Portable PC',
+    premium: false,
+    description:
+      'Access your PC anywhere at any time, allowing you to swap your Pokemon while hunting, or budget healing your Pokemon while running dailies',
+    image: 'src/assets/PokeOne.ico',
+  },
+  {
+    id: 6,
+    name: 'Advanced PokeRadar',
+    premium: true,
+    description:
+      'Displays the encounter rate of all Pokemon in your area, with and without Rare+ buff active.',
+    image: 'src/assets/PokeOne.ico',
+  },
+  {
+    id: 7,
+    name: 'No Wild Encounters',
+    premium: true,
+    description:
+      'Tired of buying Super Repels? This feature prevents wild Pokemon from spawning while you have it active. Great for alting!',
+    image: 'src/assets/PokeOne.ico',
   },
 ];
