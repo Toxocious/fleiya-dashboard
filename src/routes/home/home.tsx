@@ -1,20 +1,12 @@
-import {
-  Card,
-  Group,
-  Image,
-  Text,
-  Tooltip,
-  useMantineTheme,
-} from '@mantine/core';
+import { Card, Group, Image, Text, Tooltip } from '@mantine/core';
+
+import { Badge } from 'tabler-icons-react';
 
 import { FeatureList } from '~/constants/feature_list';
 
 import PokeOneIcon from '~/assets/PokeOne.ico';
-import { Badge } from 'tabler-icons-react';
 
 export const HomePage = () => {
-  const theme = useMantineTheme();
-
   return (
     <div className='page'>
       <div
