@@ -3,6 +3,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { Loader } from '@mantine/core';
 
 import { Sidebar } from '~/components/sidebar';
+import { PokedexEntry } from '~/components/pokedex_entry';
 
 import { HomePage } from '~/routes/home';
 import { NewsPage } from '~/routes/news';
@@ -25,6 +26,7 @@ function App() {
             <Route path='/' element={<HomePage />} />
             <Route path='/news' element={<NewsPage />} />
             <Route path='/pokedex' element={<PokedexPage />} />
+            <Route path='/pokedex/:id' element={<PokedexEntry />} />
             <Route path='/itemdex' element={<ItemdexPage />} />
             <Route path='/guides' element={<GuidesPage />} />
             <Route path='/explorer' element={<ExplorerPage />} />
