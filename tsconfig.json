@@ -22,17 +22,23 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
-      "client/*": [
-        "./client/*",
+      "@assets/*": [
+        "./client/assets/*",
       ],
-      "server/*": [
-        "./server/*"
-      ]
+      "@components/*": [
+        "./client/components/*",
+      ],
+      "@constants/*": [
+        "./client/constants/*",
+      ],
+      "@routes/*": [
+        "./client/routes/*",
+      ],
     },
   },
   "include": [
-    "client/**/*",
-    "server/**/*"
+    "./vite.config.ts",
+    "./client/**/*",
   ],
   "references": [
     { "path": "./tsconfig.node.json" }

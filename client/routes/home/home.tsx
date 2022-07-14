@@ -2,8 +2,9 @@ import { Card, Group, Image, Text, Tooltip } from '@mantine/core';
 
 import { Badge } from 'tabler-icons-react';
 
-import { FeatureList } from 'client/constants/feature_list';
-import PokeOneIcon from 'client/assets/PokeOne.ico';
+import { FeatureList } from '@constants/feature_list';
+
+import PokeOneIcon from '@assets/PokeOne.ico';
 
 export const HomePage = () => {
   return (
@@ -129,7 +130,7 @@ export const HomePage = () => {
           }}
         >
           {FeatureList.filter((feature) => feature.premium).map((feature) => (
-            <div className='card-container'>
+            <div key={feature.id} className='card-container'>
               <Card radius='md' shadow='md'>
                 <Card.Section>
                   <Image src={feature.image} height={160} alt={feature.name} />
