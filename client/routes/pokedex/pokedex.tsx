@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { POKEDEX_ENTRIES } from '~/constants/pokedex_entries';
+import { POKEDEX_ENTRIES } from 'client/constants/pokedex_entries';
 
 export const PokedexPage = (props: any) => {
   return (

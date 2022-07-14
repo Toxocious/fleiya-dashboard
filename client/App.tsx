@@ -2,16 +2,16 @@ import { Suspense } from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { Loader } from '@mantine/core';
 
-import { Sidebar } from '~/components/sidebar';
-import { PokedexEntry } from '~/components/pokedex_entry';
+import { Sidebar } from 'client/components/sidebar';
+import { PokedexEntry } from 'client/components/pokedex_entry';
 
-import { HomePage } from '~/routes/home';
-import { NewsPage } from '~/routes/news';
-import { PokedexPage } from '~/routes/pokedex';
-import { ItemdexPage } from '~/routes/itemdex';
-import { GuidesPage } from '~/routes/guides';
-import { ExplorerPage } from '~/routes/explorer';
-import { ChangelogPage } from './routes/changelog';
+import { HomePage } from 'client/routes/home';
+import { NewsPage } from 'client/routes/news';
+import { PokedexPage } from 'client/routes/pokedex';
+import { ItemdexPage } from 'client/routes/itemdex';
+import { GuidesPage } from 'client/routes/guides';
+import { ExplorerPage } from 'client/routes/explorer';
+import { ChangelogPage } from 'client/routes/changelog';
 
 import './App.css';
 

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { ThemeIcon, UnstyledButton, Group, Text } from '@mantine/core';
 
-import { SidebarNavigation } from '~/constants/sidebar_navigation';
+import { SidebarNavigation } from 'client/constants/sidebar_navigation';
 
 interface MainLinkProps {
   icon: React.ReactNode;

@@ -8,7 +8,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, 'src'),
+      'client/': path.resolve(__dirname, 'client'),
+      'server/': path.resolve(__dirname, 'server'),
     },
   },
 });

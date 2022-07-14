@@ -3,7 +3,7 @@ import { Tooltip, Group, Button, Box } from '@mantine/core';
 
 import { Article, BrandGithub } from 'tabler-icons-react';
 
-import PokeOneIcon from '~/assets/PokeOne.ico';
+import PokeOneIcon from 'client/assets/PokeOne.ico';
 
 export function SidebarHeader() {
   return (

@@ -1,6 +1,6 @@
 import { Paper, List } from '@mantine/core';
 
-import { Changelog } from '~/constants/changelog';
+import { Changelog } from 'client/constants/changelog';
 
 export const ChangelogPage = () => {
   return (
