@@ -40,6 +40,9 @@
     "./vite.config.ts",
     "./client/**/*",
   ],
+  "exclude": [
+    "./server/**/*"
+  ],
   "references": [
     { "path": "./tsconfig.node.json" }
   ]

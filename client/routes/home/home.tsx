@@ -50,7 +50,7 @@ export const HomePage = () => {
       <br />
 
       <section>
-        <h1 style={{ margin: '10px 1em', textAlign: 'left' }}>Free Features</h1>
+        <h1 style={{ margin: 0, letterSpacing: 4 }}>Free Features</h1>
 
         <hr />
 
@@ -70,7 +70,7 @@ export const HomePage = () => {
           }}
         >
           {FeatureList.filter((feature) => !feature.premium).map((feature) => (
-            <div className='card-container'>
+            <div key={feature.id} className='card-container'>
               <Card radius='md' shadow='md'>
                 <Card.Section>
                   <Image src={feature.image} height={160} alt={feature.name} />
@@ -104,11 +104,14 @@ export const HomePage = () => {
       <br />
 
       <section>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Badge color='teal' />
-          <h1 style={{ margin: '10px 1em', textAlign: 'left' }}>
-            Premium Features
-          </h1>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <h1 style={{ margin: 0, letterSpacing: 4 }}>Premium Features</h1>
         </div>
 
         <hr />
