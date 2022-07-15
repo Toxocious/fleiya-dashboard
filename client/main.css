@@ -17,47 +17,11 @@ body {
   width: 100%;
 }
 
-h2 {
+h1, h2, h3, h4 {
   font-family: "Nunito";
 }
 
-.App {
-  display: flex;
-  flex-direction: row;
-
-  height: 100vh;
-
-  font-family: sans-serif;
-  text-align: center;
-}
-
-.page {
-  backdrop-filter: blur(2px) saturate(150%);
-  -webkit-backdrop-filter: blur(2px) saturate(150%);
-  background-color: rgba(17, 25, 40, 0.75);
-
-  color: #d3d3d3;
-
-  height: 100vh;
-  flex-grow: 1;
-}
-
-.sidebar {
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.75);
-  border-right: 1px solid rgba(255, 255, 255, 0.125);
-
-  color: #d3d3d3;
-
-  height: 100vh;
-  width: clamp(200px, 20em, 400px);
-
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar hr {
+hr {
   background-color: #6120c9;
   background-image: linear-gradient(left, #161618 2%, #6120c9 50%, #161618 98%);
   background-image: -o-linear-gradient(left,
@@ -88,4 +52,53 @@ h2 {
   height: 1px;
   width: 80%;
   margin: 0 auto;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+
+  height: 100vh;
+
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.page {
+  backdrop-filter: blur(2px) saturate(150%);
+  -webkit-backdrop-filter: blur(2px) saturate(150%);
+  background-color: rgba(17, 25, 40, 0.75);
+
+  color: #d3d3d3;
+
+  height: 100vh;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.sidebar {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-right: 1px solid rgba(255, 255, 255, 0.125);
+
+  color: #d3d3d3;
+
+  height: 100vh;
+
+  min-width: 300px;
+  width: clamp(300px, 20em, 400px);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container {
+  width: 48%;
+}
+
+@media (max-width: 900px) {
+  .card-container {
+    width: 100%;
+  }
 }

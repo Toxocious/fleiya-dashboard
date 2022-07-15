@@ -1,7 +1,6 @@
-import { Card, Group, Image, Text, Tooltip } from '@mantine/core';
+import { Text } from '@mantine/core';
 
-import { Badge } from 'tabler-icons-react';
-
+import { FeatureCard } from '@components/feature_card';
 import { FeatureList } from '@constants/feature_list';
 
 import PokeOneIcon from '@assets/PokeOne.ico';
@@ -28,7 +27,9 @@ export const HomePage = () => {
         />
         <h1 style={{ margin: 0, letterSpacing: 4 }}>Fleiya</h1>
 
+        <br />
         <hr />
+        <br />
       </div>
 
       <section>
@@ -48,11 +49,14 @@ export const HomePage = () => {
       </section>
 
       <br />
+      <br />
 
       <section>
         <h1 style={{ margin: 0, letterSpacing: 4 }}>Free Features</h1>
 
+        <br />
         <hr />
+        <br />
 
         <Text size='md'>
           Fleiya provides a number of freely available features that are
@@ -70,37 +74,12 @@ export const HomePage = () => {
           }}
         >
           {FeatureList.filter((feature) => !feature.premium).map((feature) => (
-            <div key={feature.id} className='card-container'>
-              <Card radius='md' shadow='md'>
-                <Card.Section>
-                  <Image src={feature.image} height={160} alt={feature.name} />
-                </Card.Section>
-
-                <Group position='apart'>
-                  <Text weight='bold'>{feature.name}</Text>
-                  {feature.premium ? (
-                    <Tooltip
-                      label='Premium Feature'
-                      openDelay={50}
-                      color='dark'
-                    >
-                      <Badge color='teal' />
-                    </Tooltip>
-                  ) : null}
-                  <Text
-                    size='sm'
-                    color='gray'
-                    style={{ lineHeight: 1.5, textAlign: 'left' }}
-                  >
-                    {feature.description}
-                  </Text>
-                </Group>
-              </Card>
-            </div>
+            <FeatureCard {...feature} />
           ))}
         </div>
       </section>
 
+      <br />
       <br />
 
       <section>
@@ -114,7 +93,9 @@ export const HomePage = () => {
           <h1 style={{ margin: 0, letterSpacing: 4 }}>Premium Features</h1>
         </div>
 
+        <br />
         <hr />
+        <br />
 
         <Text size='md'>
           Fleiya provides a number of premium features that are available to
@@ -133,24 +114,7 @@ export const HomePage = () => {
           }}
         >
           {FeatureList.filter((feature) => feature.premium).map((feature) => (
-            <div key={feature.id} className='card-container'>
-              <Card radius='md' shadow='md'>
-                <Card.Section>
-                  <Image src={feature.image} height={160} alt={feature.name} />
-                </Card.Section>
-
-                <Group position='apart'>
-                  <Text weight='bold'>{feature.name}</Text>
-                  <Text
-                    size='sm'
-                    color='gray'
-                    style={{ lineHeight: 1.5, textAlign: 'left' }}
-                  >
-                    {feature.description}
-                  </Text>
-                </Group>
-              </Card>
-            </div>
+            <FeatureCard {...feature} />
           ))}
         </div>
       </section>
