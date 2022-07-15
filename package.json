@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "server": "nodemon ./server/index.ts",
-    "client": "vite client/*",
+    "client": "vite ./client/",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "devtest": "vite ./client/"
@@ -13,6 +13,8 @@
   "dependencies": {
     "@mantine/core": "^4.2.11",
     "@mantine/hooks": "^4.2.11",
+    "@reduxjs/toolkit": "^1.8.3",
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
@@ -20,7 +22,9 @@
     "mongoose": "^6.4.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
+    "redux": "^4.2.0",
     "tabler-icons-react": "^1.52.0",
     "ts-node": "^10.9.1",
     "vite": "^2.9.9",

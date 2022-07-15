@@ -22,6 +22,12 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
+      "@actions/*": [
+        "./client/actions/*",
+      ],
+      "@api/*": [
+        "./client/api/*",
+      ],
       "@assets/*": [
         "./client/assets/*",
       ],
@@ -30,6 +36,9 @@
       ],
       "@constants/*": [
         "./client/constants/*",
+      ],
+      "@reducers/*": [
+        "./client/reducers/*",
       ],
       "@routes/*": [
         "./client/routes/*",

@@ -31,4 +31,4 @@ mongoose
       )
     )
   )
-  .catch((error) => console.log(`[! | Error] ${error} did not connect`));
+  .catch((error) => console.log(`[! | Server] Unable to connect`, error));
