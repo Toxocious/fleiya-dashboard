@@ -71,9 +71,11 @@ hr {
 
   color: #d3d3d3;
 
-  height: 100vh;
+  height: calc(100vh - 2em);
   flex-grow: 1;
   overflow: auto;
+
+  padding: 1em 12px;
 }
 
 .sidebar {

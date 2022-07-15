@@ -1,23 +1,31 @@
-import { Text } from '@mantine/core';
+import { Text, createStyles } from '@mantine/core';
 
 import { FeatureCard } from '@components/feature_card';
 import { FeatureList } from '@constants/feature_list';
 
 import PokeOneIcon from '@assets/PokeOne.ico';
 
+const useStyles = createStyles((theme) => ({
+  cardContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: '1em',
+  },
+
+  sectionHeading: {
+    margin: 0,
+    letterSpacing: 4,
+  },
+}));
+
 export const HomePage = () => {
+  const { classes } = useStyles();
+
   return (
     <div className='page'>
-      <div
-        className='section-header'
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '0.5em',
-        }}
-      >
+      <div>
         <img
           src={PokeOneIcon}
           style={{
@@ -25,7 +33,7 @@ export const HomePage = () => {
             width: 64,
           }}
         />
-        <h1 style={{ margin: 0, letterSpacing: 4 }}>Fleiya</h1>
+        <h1 className={classes.sectionHeading}>Fleiya</h1>
 
         <br />
         <hr />
@@ -52,7 +60,7 @@ export const HomePage = () => {
       <br />
 
       <section>
-        <h1 style={{ margin: 0, letterSpacing: 4 }}>Free Features</h1>
+        <h1 className={classes.sectionHeading}>Free Features</h1>
 
         <br />
         <hr />
@@ -64,15 +72,7 @@ export const HomePage = () => {
         </Text>
         <br />
 
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: '1em',
-          }}
-        >
+        <div className={classes.cardContainer}>
           {FeatureList.filter((feature) => !feature.premium).map((feature) => (
             <FeatureCard {...feature} />
           ))}
@@ -90,7 +90,7 @@ export const HomePage = () => {
             justifyContent: 'center',
           }}
         >
-          <h1 style={{ margin: 0, letterSpacing: 4 }}>Premium Features</h1>
+          <h1 className={classes.sectionHeading}>Premium Features</h1>
         </div>
 
         <br />
@@ -104,15 +104,7 @@ export const HomePage = () => {
         </Text>
         <br />
 
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: '1em',
-          }}
-        >
+        <div className={classes.cardContainer}>
           {FeatureList.filter((feature) => feature.premium).map((feature) => (
             <FeatureCard {...feature} />
           ))}
