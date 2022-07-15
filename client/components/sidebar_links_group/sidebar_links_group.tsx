@@ -23,14 +23,11 @@ const useStyles = createStyles((theme) => ({
     'display': 'block',
     'width': '100%',
     'padding': `${theme.spacing.xs}px ${theme.spacing.md}px`,
-    'color': theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
+    'color': theme.white,
     'fontSize': theme.fontSizes.sm,
 
     '&:hover': {
-      backgroundColor:
-        theme.colorScheme === 'dark'
-          ? theme.colors.dark[7]
-          : theme.colors.gray[0],
+      backgroundColor: 'rgba(97, 32, 201, 0.15)',
       color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     },
   },
@@ -45,17 +42,14 @@ const useStyles = createStyles((theme) => ({
     'fontSize': theme.fontSizes.sm,
     'color':
       theme.colorScheme === 'dark'
-        ? theme.colors.dark[0]
+        ? theme.colors.dark[1]
         : theme.colors.gray[7],
     'borderLeft': `1px solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
     }`,
 
     '&:hover': {
-      backgroundColor:
-        theme.colorScheme === 'dark'
-          ? theme.colors.dark[7]
-          : theme.colors.gray[0],
+      backgroundColor: 'rgba(97, 32, 201, 0.15)',
       color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     },
   },

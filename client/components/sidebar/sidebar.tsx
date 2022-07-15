@@ -6,7 +6,7 @@ import { User } from '@components/sidebar_user';
 
 export const Sidebar = () => {
   return (
-    <Navbar p='xs' width={{ base: 300 }}>
+    <Navbar p='xs' className='sidebar'>
       <Navbar.Section mt='xs'>
         <SidebarHeader />
       </Navbar.Section>
