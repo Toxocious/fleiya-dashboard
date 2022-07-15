@@ -1,51 +1,31 @@
-import { Link } from 'react-router-dom';
-
-import { ThemeIcon, UnstyledButton, Group, Text } from '@mantine/core';
+import { Navbar, ScrollArea, createStyles } from '@mantine/core';
 
 import { SidebarNavigation } from '@constants/sidebar_navigation';
 
-interface MainLinkProps {
-  icon: React.ReactNode;
-  color: string;
-  label: string;
-  route: string;
-}
+import { SidebarLinksGroup } from '@components/sidebar_links_group';
 
-function MainLink({ icon, color, label, route }: MainLinkProps) {
-  return (
-    <UnstyledButton
-      component={Link}
-      to={route}
-      sx={(theme) => ({
-        'display': 'block',
-        'width': '93%',
-        'padding': theme.spacing.xs,
-        'borderRadius': theme.radius.sm,
-        'color':
-          theme.colorScheme === 'dark' ? theme.colors.gray[4] : theme.black,
+const useStyles = createStyles((theme) => ({
+  links: {
+    marginTop: '-1em',
+    width: '100%',
+  },
 
-        '&:hover': {
-          backgroundColor:
-            theme.colorScheme === 'dark'
-              ? theme.colors.dark[6]
-              : theme.colors.gray[0],
-        },
-      })}
-    >
-      <Group>
-        <ThemeIcon color={color} variant='light'>
-          {icon}
-        </ThemeIcon>
-
-        <Text size='sm'>{label}</Text>
-      </Group>
-    </UnstyledButton>
-  );
-}
+  linksInner: {
+    paddingTop: theme.spacing.xl,
+    paddingBottom: theme.spacing.xl,
+  },
+}));
 
 export function MainLinks() {
-  const links = SidebarNavigation.map((link) => (
-    <MainLink {...link} key={link.label} />
+  const { classes } = useStyles();
+
+  const links = SidebarNavigation.map((item) => (
+    <SidebarLinksGroup {...item} key={item.label} />
   ));
-  return <div>{links}</div>;
+
+  return (
+    <Navbar.Section grow className={classes.links} component={ScrollArea}>
+      <div className={classes.linksInner}>{links}</div>
+    </Navbar.Section>
+  );
 }
