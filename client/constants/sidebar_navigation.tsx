@@ -2,8 +2,9 @@ import {
   Home,
   News,
   GitPullRequest,
-  AlertCircle,
+  Apps,
   Database,
+  Tools,
 } from 'tabler-icons-react';
 
 export const SidebarNavigation = [
@@ -29,7 +30,7 @@ export const SidebarNavigation = [
         hiddenToGuests: false,
       },
       {
-        id: 2,
+        id: 3,
         label: 'Features',
         link: '/features',
         color: 'teal',
@@ -38,21 +39,21 @@ export const SidebarNavigation = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     label: 'National Dex',
     link: '/',
     icon: Database,
     hiddenToGuests: false,
     links: [
       {
-        id: 4,
+        id: 5,
         label: 'Pokedex',
         link: '/pokedex',
         color: 'teal',
         hiddenToGuests: false,
       },
       {
-        id: 5,
+        id: 6,
         label: 'Itemdex',
         link: '/itemdex',
         color: 'teal',
@@ -61,16 +62,39 @@ export const SidebarNavigation = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     label: 'Guides',
     link: '/guides',
     color: 'teal',
-    icon: AlertCircle,
+    icon: Apps,
     hiddenToGuests: false,
     links: [],
   },
   {
-    id: 7,
+    id: 8,
+    label: 'Tools',
+    color: 'teal',
+    icon: Tools,
+    hiddenToGuests: false,
+    links: [
+      {
+        id: 9,
+        label: 'Hidden Power Calculator',
+        link: '/hp_calc',
+        color: 'teal',
+        hiddenToGuests: false,
+      },
+      {
+        id: 10,
+        label: 'Trainer Level Calculator',
+        link: '/tl_calc',
+        color: 'teal',
+        hiddenToGuests: false,
+      },
+    ],
+  },
+  {
+    id: 11,
     label: 'Map Explorer (Beta)',
     link: '/explorer',
     color: 'grape',
