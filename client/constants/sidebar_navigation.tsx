@@ -28,6 +28,13 @@ export const SidebarNavigation = [
         color: 'teal',
         hiddenToGuests: false,
       },
+      {
+        id: 2,
+        label: 'Features',
+        link: '/features',
+        color: 'teal',
+        hiddenToGuests: false,
+      },
     ],
   },
   {
