@@ -7,6 +7,8 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 
+import { Star } from 'tabler-icons-react';
+
 export function User() {
   const theme = useMantineTheme();
 
@@ -42,6 +44,12 @@ export function User() {
               <Text color='dimmed' size='xs'>
                 Free Membership
               </Text>
+            </Box>
+
+            <Box sx={{ right: 0 }}>
+              <Avatar radius='md' color='grape'>
+                <Star />
+              </Avatar>
             </Box>
           </Group>
         </UnstyledButton>

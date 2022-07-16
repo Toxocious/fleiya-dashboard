@@ -44,9 +44,7 @@ const useStyles = createStyles((theme) => ({
       theme.colorScheme === 'dark'
         ? theme.colors.dark[1]
         : theme.colors.gray[7],
-    'borderLeft': `1px solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
-    }`,
+    'borderLeft': `1px solid ${theme.colors.gray[6]}`,
 
     '&:hover': {
       backgroundColor: 'rgba(97, 32, 201, 0.15)',
