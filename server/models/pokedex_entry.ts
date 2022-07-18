@@ -1,41 +1,129 @@
 import mongoose, { Schema } from 'mongoose';
 
 const POKEDEX_ENTRY_SCHEMA: any = new Schema({
-  // Canonical National Dex ID #
-  id: {
-    type: Number,
+  ID: {
+    type: String,
   },
-
-  // Alternative formes are tracked via their alt_id
-  // Ex: Absol (non-mega) would have an alt_id of 0
-  //     Absol (mega) would have an alt_id of 1
-  // And so on and so forth
-  alt_id: {
-    type: Number,
+  Pokedex_ID: {
+    type: String,
   },
-
-  // Base name of the Pokemon
-  // Ex: Absol or Jirachi
-  name: {
+  Alt_ID: {
     type: String,
   },
 
-  // Name of the Pokemon's forme if applicable
-  // Ex: Mega or Primal
-  // Is undefined by default
-  forme: {
+  Pokemon: {
     type: String,
-    default: undefined,
+  },
+  Forme: {
+    type: String,
   },
 
-  // Timestamp of when the Pokemon was last updated
-  last_updated: {
-    type: Date,
-    default: new Date(),
+  Type_Primary: {
+    type: String,
+  },
+  Type_Secondary: {
+    type: String,
+  },
+
+  Ability_1: {
+    type: String,
+  },
+  Ability_2: {
+    type: String,
+  },
+  Hidden_Ability: {
+    type: String,
+  },
+
+  HP: {
+    type: String,
+  },
+  Attack: {
+    type: String,
+  },
+  Defense: {
+    type: String,
+  },
+  SpAttack: {
+    type: String,
+  },
+  SpDefense: {
+    type: String,
+  },
+  Speed: {
+    type: String,
+  },
+
+  EV_HP: {
+    type: String,
+  },
+  EV_Attack: {
+    type: String,
+  },
+  EV_Defense: {
+    type: String,
+  },
+  EV_SpAttack: {
+    type: String,
+  },
+  EV_SpDefense: {
+    type: String,
+  },
+  EV_Speed: {
+    type: String,
+  },
+
+  Male: {
+    type: String,
+  },
+  Female: {
+    type: String,
+  },
+  Genderless: {
+    type: String,
+  },
+
+  Height: {
+    type: String,
+  },
+  Weight: {
+    type: String,
+  },
+
+  Catch_Rate: {
+    type: String,
+  },
+  Egg_Cycles: {
+    type: String,
+  },
+  Egg_Group_1: {
+    type: String,
+  },
+  Egg_Group_2: {
+    type: String,
+  },
+
+  Exp_Yield: {
+    type: String,
+  },
+
+  Base_Happiness: {
+    type: String,
+  },
+
+  Is_Baby: {
+    type: String,
+  },
+  Is_Mythical: {
+    type: String,
+  },
+  Is_Legendary: {
+    type: String,
   },
 });
 
 export const POKEDEX_ENTRY = mongoose.model(
-  'Pokedex_Entry',
-  POKEDEX_ENTRY_SCHEMA
+  'pokedex',
+  POKEDEX_ENTRY_SCHEMA,
+  'pokedex'
 );
