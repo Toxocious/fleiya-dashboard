@@ -1,12 +1,12 @@
-import { Suspense } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Loader, createStyles } from '@mantine/core';
 
 import { PokedexCard } from '@components/pokedex_card';
 
-import { POKEDEX_ENTRIES } from '@constants/pokedex_entries';
+import { GET_POKEDEX_ENTRIES } from '@actions/pokedex_entry';
 
 const useStyles = createStyles((theme) => ({
   cardContainer: {
@@ -19,21 +19,30 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export const PokedexPage = (props: any) => {
+  const [entries, setEntries] = useState([]);
+  const dispatch = useDispatch();
   const { classes } = useStyles();
 
-  const ENTRIES = useSelector((state) => state);
-  console.log('[~ | Redux Store] Entries:', ENTRIES);
+  useEffect(() => {
+    // @ts-ignore
+    dispatch(GET_POKEDEX_ENTRIES());
+  }, [entries, dispatch]);
+
+
+  const ENTRIES: any = useSelector((state) => state);
 
   return (
     <div className='page'>
       <h2>Pokedex</h2>
 
       <div className={classes.cardContainer}>
-        <Suspense fallback={<Loader color='teal' />}>
-          {POKEDEX_ENTRIES.map((entry) => (
-            <PokedexCard {...entry} />
-          ))}
-        </Suspense>
+        {typeof ENTRIES?.POKEDEX_ENTRIES?.payload == 'undefined' ? (
+          <Loader color='teal' />
+        ) : (
+          ENTRIES.POKEDEX_ENTRIES.payload.map((entry: any) => (
+            <PokedexCard key={entry.ID} {...entry} />
+          ))
+        )}
       </div>
     </div>
   );

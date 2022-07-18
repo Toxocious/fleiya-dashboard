@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import { Image, Card, Tooltip, createStyles } from '@mantine/core';
 
 interface iPokedexCard {
-  id: number;
-  alt_id: number;
-  name: string;
-  forme: string;
-  icon: string;
-  sprite: string;
+  ID: string;
+  Pokemon: string;
+  Forme: String;
+  Pokedex_ID: string;
+  Alt_ID: string;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -29,16 +28,16 @@ const useStyles = createStyles((theme) => ({
 
 export const PokedexCard = (props: iPokedexCard) => {
   const { classes } = useStyles();
-  const { id, alt_id, name, forme, icon, sprite } = props;
+  const { ID, Pokemon, Forme, Pokedex_ID, Alt_ID } = props;
 
-  const SPECIES_NAME = forme == '' ? name : `${name} (${forme})`;
-  const ROUTE_PATH = alt_id == 0 ? id : `${id}.${alt_id}`;
+  const SPECIES_NAME = !Forme ? Pokemon : `${Pokemon} ${Forme}`;
+  const ROUTE_PATH = Alt_ID ? Pokedex_ID : `${Pokedex_ID}.${Alt_ID}`;
 
   return (
     <Tooltip label={SPECIES_NAME} openDelay={100} color='grape'>
       <Link to={`/pokedex/${ROUTE_PATH}`}>
         <div
-          key={`${id}.${alt_id}`}
+          key={ID}
           className='card-container'
           style={{ height: 32, width: 40 }}
         >
@@ -46,8 +45,7 @@ export const PokedexCard = (props: iPokedexCard) => {
             <Card.Section>
               <Image
                 className={classes.cardImage}
-                src={icon}
-                alt={name}
+                alt={Pokemon}
                 fit='contain'
               />
             </Card.Section>
