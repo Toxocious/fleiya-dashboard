@@ -74,7 +74,7 @@ export const FeaturesPage = () => {
 
         <div className={classes.cardContainer}>
           {FeatureList.filter((feature) => !feature.premium).map((feature) => (
-            <FeatureCard {...feature} />
+            <FeatureCard key={feature.id} {...feature} />
           ))}
         </div>
       </section>
@@ -106,7 +106,7 @@ export const FeaturesPage = () => {
 
         <div className={classes.cardContainer}>
           {FeatureList.filter((feature) => feature.premium).map((feature) => (
-            <FeatureCard {...feature} />
+            <FeatureCard key={feature.id} {...feature} />
           ))}
         </div>
       </section>

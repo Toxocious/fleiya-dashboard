@@ -10,7 +10,6 @@ export const GET_POKEDEX_ENTRIES = () => async (dispatch: any) => {
       payload: data,
       type: API_ACTIONS.GET_ALL,
     });
-    console.log('[~ | GET_POKEDEX_ENTRIES]', data);
   } catch (error) {
     console.log(
       `[! | ACTIONS] An error occurred while getting all pokedex entries.`,

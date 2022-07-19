@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 
 import { Image, Card, Tooltip, createStyles } from '@mantine/core';
 
+import { GetPokemonImages } from '@util/get_poke_images';
+
 interface iPokedexCard {
   ID: string;
   Pokemon: string;
@@ -33,6 +35,8 @@ export const PokedexCard = (props: iPokedexCard) => {
   const SPECIES_NAME = !Forme ? Pokemon : `${Pokemon} ${Forme}`;
   const ROUTE_PATH = Alt_ID ? Pokedex_ID : `${Pokedex_ID}.${Alt_ID}`;
 
+  const ENTRY_SPRITES = GetPokemonImages(Pokedex_ID, Forme);
+
   return (
     <Tooltip label={SPECIES_NAME} openDelay={100} color='grape'>
       <Link to={`/pokedex/${ROUTE_PATH}`}>
@@ -45,6 +49,7 @@ export const PokedexCard = (props: iPokedexCard) => {
             <Card.Section>
               <Image
                 className={classes.cardImage}
+                src={ENTRY_SPRITES.Icon}
                 alt={Pokemon}
                 fit='contain'
               />

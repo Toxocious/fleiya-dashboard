@@ -9,7 +9,6 @@ export const POKEDEX_ENTRY = (Pokedex_Entry = [], action: iAction) => {
   switch (action.type) {
     // @ts-ignore
     case API_ACTIONS.GET_ALL:
-      console.log(action);
       return action;
 
     default:
