@@ -7,8 +7,6 @@
     "server": "nodemon ./server/index.ts",
     "client": "vite ./client/",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "devtest": "vite ./client/",
     "lint-prettier": "prettier --write && git add"
   },
   "dependencies": {
