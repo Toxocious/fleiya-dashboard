@@ -43,6 +43,9 @@
       "@routes/*": [
         "./client/routes/*",
       ],
+      "@util/*": [
+        "./client/util/*",
+      ],
     },
   },
   "include": [

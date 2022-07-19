@@ -21,6 +21,7 @@ export default defineConfig({
       '@constants': path.resolve(__dirname, './constants'),
       '@reducers': path.resolve(__dirname, './reducers'),
       '@routes': path.resolve(__dirname, './routes'),
+      '@util': path.resolve(__dirname, './util'),
     },
   },
 });
