@@ -37,6 +37,9 @@
       "@constants/*": [
         "./client/constants/*",
       ],
+      "@features/*": [
+        "./client/features/*",
+      ],
       "@reducers/*": [
         "./client/reducers/*",
       ],
