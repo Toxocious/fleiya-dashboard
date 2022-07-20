@@ -1,40 +1,30 @@
-import {
-  Home,
-  News,
-  GitPullRequest,
-  Apps,
-  Database,
-  Tools,
-} from 'tabler-icons-react';
+import { Home, Apps, Database, Tools } from 'tabler-icons-react';
 
-export const SidebarNavigation = [
+export const NavigationItems = [
   {
     id: 0,
     label: 'Home',
     color: 'teal',
     icon: Home,
-    hiddenToGuests: false,
+    active: true,
     links: [
       {
         id: 1,
         label: 'Home',
         link: '/',
         color: 'teal',
-        hiddenToGuests: false,
       },
       {
         id: 2,
         label: 'News',
         link: '/news',
         color: 'teal',
-        hiddenToGuests: false,
       },
       {
         id: 3,
         label: 'Features',
         link: '/features',
         color: 'teal',
-        hiddenToGuests: false,
       },
     ],
   },
@@ -43,21 +33,19 @@ export const SidebarNavigation = [
     label: 'National Dex',
     link: '/',
     icon: Database,
-    hiddenToGuests: false,
+    active: false,
     links: [
       {
         id: 5,
         label: 'Pokedex',
         link: '/pokedex',
         color: 'teal',
-        hiddenToGuests: false,
       },
       {
         id: 6,
         label: 'Itemdex',
         link: '/itemdex',
         color: 'teal',
-        hiddenToGuests: false,
       },
     ],
   },
@@ -67,7 +55,7 @@ export const SidebarNavigation = [
     link: '/guides',
     color: 'teal',
     icon: Apps,
-    hiddenToGuests: false,
+    active: false,
     links: [],
   },
   {
@@ -75,31 +63,20 @@ export const SidebarNavigation = [
     label: 'Tools',
     color: 'teal',
     icon: Tools,
-    hiddenToGuests: false,
+    active: false,
     links: [
       {
         id: 9,
         label: 'Hidden Power Calculator',
         link: '/hp_calc',
         color: 'teal',
-        hiddenToGuests: false,
       },
       {
         id: 10,
         label: 'Trainer Level Calculator',
         link: '/tl_calc',
         color: 'teal',
-        hiddenToGuests: false,
       },
     ],
-  },
-  {
-    id: 11,
-    label: 'Map Explorer (Beta)',
-    link: '/explorer',
-    color: 'grape',
-    icon: GitPullRequest,
-    hiddenToGuests: true,
-    links: [],
   },
 ];
