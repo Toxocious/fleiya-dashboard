@@ -1,0 +1,25 @@
+.card {
+  background-color: #232530;
+  border: 1px solid #1C1E26;
+
+  border-radius: 0.5em;
+  width: 20em;
+
+  transition: all 150ms ease-in-out;
+}
+
+.card.gradient {
+  border-left: 4px solid #FAB795;
+  padding: 1em 0;
+}
+
+.card.gradient:hover {
+  border-left: 4px solid #E95379;
+}
+
+.card.group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
