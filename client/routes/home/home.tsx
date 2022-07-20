@@ -1,58 +1,71 @@
-import { Text, createStyles } from '@mantine/core';
+import { Card } from '@components/card';
+import { SocialCards } from '@features/social_links';
 
-import PokeOneIcon from '@assets/PokeOne.ico';
-
-const useStyles = createStyles((theme) => ({
-  flexCenter: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-  },
-
-  sectionHeading: {
-    margin: 0,
-    letterSpacing: 4,
-  },
-}));
+import ChristmasThumbail from '@assets/thumbnails/christmas-event-thumbnail.png';
 
 export const HomePage = () => {
-  const { classes } = useStyles();
-
   return (
-    <div className='page'>
-      <div className={classes.flexCenter}>
+    <main>
+      <div className='flex-row'>
+        <SocialCards />
+      </div>
+
+      <br />
+
+      <div
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        <h1 className='separator'>Fleiya</h1>
+
         <div>
-          <img
-            src={PokeOneIcon}
-            style={{
-              height: 64,
-              width: 64,
-            }}
-          />
-          <h1 className={classes.sectionHeading}>Fleiya</h1>
+          <p>
+            Fleiya is a public resource for the community, providing a plethora
+            of verified data and information about various topics around the
+            Pok&eacute;One game, whether it be information on where to find each
+            Pok&eacute;mon, guides on how to find and catch legendary
+            Pok&eacute;mon, as well as tools to help you determine the necessary
+            IVs needed to have a specifically typed Hidden Power, among other
+            things.
+          </p>
         </div>
 
         <br />
-        <hr />
-        <br />
 
-        <section>
-          <Text size='md'>
-            Fleiya is a mod loader that both enhances and expands the in-game
-            functionality provided to the player in the Pok&eacute;One MMORPG.
-          </Text>
+        <h1 className='separator'>News</h1>
 
-          <br />
+        <div className='flex-row'>
+          <Card>
+            <Card.Section>
+              <img
+                src={ChristmasThumbail}
+                style={{
+                  borderRadius: '6px 6px 0 0',
+                  height: 260,
+                  width: 320,
+                }}
+              />
+            </Card.Section>
 
-          <Text size='md'>
-            This website serves to be the dashboard provided to users of Fleiya,
-            displaying all documented information that has been collected by
-            those who use Fleiya, including user-specific information that has
-            been collected while playing.
-          </Text>
-        </section>
+            <Card.Section>
+              <h2 style={{ margin: '0.5em' }}>Christmas Event</h2>
+            </Card.Section>
+          </Card>
+
+          <div style={{ width: '60%' }}>
+            The Christmas event has been reopened for a few weeks, starting on
+            July 2nd, 2022, and will end on July 21st, 2022.
+            <br />
+            <br />
+            Make your way over there to partake in a fun (and somewhat long)
+            Christmas-themed questline!
+            <br />
+            <br />
+            There are many rewards to be had, and many puns to enjoy.
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   );
 };

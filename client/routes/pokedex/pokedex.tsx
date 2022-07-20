@@ -28,11 +28,10 @@ export const PokedexPage = (props: any) => {
     dispatch(GET_POKEDEX_ENTRIES());
   }, [entries, dispatch]);
 
-
   const ENTRIES: any = useSelector((state) => state);
 
   return (
-    <div className='page'>
+    <main>
       <h2>Pokedex</h2>
 
       <div className={classes.cardContainer}>
@@ -44,6 +43,6 @@ export const PokedexPage = (props: any) => {
           ))
         )}
       </div>
-    </div>
+    </main>
   );
 };
