@@ -1,8 +1,6 @@
 import { Suspense } from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
-
 import { Loader } from '@mantine/core';
 
 import { Header } from '@components/header';

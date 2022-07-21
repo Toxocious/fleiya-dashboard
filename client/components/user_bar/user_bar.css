@@ -43,31 +43,35 @@
 }
 
 
-.user_bar > .user_bar_container > nav > ul > li {
+.user_bar > .user_bar_container > nav > ul > li > .nav-item {
+  color: #FAB28E;
+
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 0.5em;
 
   border-bottom: 2px solid transparent;
+
   padding: 1em;
 
   transition: all 150ms ease-in-out;
 }
 
-.user_bar > .user_bar_container > nav > ul > li:hover {
+.user_bar > .user_bar_container > nav > ul > li > .nav-item:hover {
   border-color: #F09383;
   color: #FAB28E;
 
   cursor: pointer;
 }
 
-.user_bar > .user_bar_container > nav > ul > li.active {
+.user_bar > .user_bar_container > nav > ul > li.active > .nav-item {
   border-color: #FAB28E;
   color: #FFFFFF;
 }
 
-.user_bar > .user_bar_container > nav > ul > li > span {
+.user_bar > .user_bar_container > nav > ul > li > .nav-item > span {
   display: flex;
-  align-items: center;
 }
 
 .user_bar > .user_bar_container > section > .user_data {
