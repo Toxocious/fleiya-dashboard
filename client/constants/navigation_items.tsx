@@ -4,29 +4,20 @@ export const NavigationItems = [
   {
     id: 0,
     label: 'Home',
+    link: '/',
     color: 'teal',
     icon: Home,
     active: true,
-    links: [
-      {
-        id: 1,
-        label: 'Home',
-        link: '/',
-        color: 'teal',
-      },
-      {
-        id: 2,
-        label: 'News',
-        link: '/news',
-        color: 'teal',
-      },
-      {
-        id: 3,
-        label: 'Features',
-        link: '/features',
-        color: 'teal',
-      },
-    ],
+    links: [],
+  },
+  {
+    id: 7,
+    label: 'Guides',
+    link: '/guides',
+    color: 'teal',
+    icon: Apps,
+    active: false,
+    links: [],
   },
   {
     id: 4,
@@ -48,15 +39,6 @@ export const NavigationItems = [
         color: 'teal',
       },
     ],
-  },
-  {
-    id: 7,
-    label: 'Guides',
-    link: '/guides',
-    color: 'teal',
-    icon: Apps,
-    active: false,
-    links: [],
   },
   {
     id: 8,
