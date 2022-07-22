@@ -63,7 +63,7 @@ const NavLink = (link_data: any) => {
 
           <>
             <ChevronDown size={14} />
-            <Dropdown links={link_data.links} hidden={showDropdown} />
+            <Dropdown links={link_data.links} hidden={!showDropdown} />
           </>
         </div>
       </li>
