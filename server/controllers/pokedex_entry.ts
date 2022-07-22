@@ -7,7 +7,9 @@ const router = express.Router();
 
 export const GET_POKEDEX_ENTRIES = async (req: any, res: Response) => {
   try {
-    const POKEDEX_ENTRIES = await POKEDEX_ENTRY.find()
+    const POKEDEX_ENTRIES = await POKEDEX_ENTRY.find({
+      Forme: null,
+    })
       .sort({
         Pokedex_ID: 'ascending',
         Alt_ID: 'ascending',
