@@ -10,6 +10,7 @@ export const GET_POKEDEX_ENTRIES = async (req: any, res: Response) => {
     const POKEDEX_ENTRIES = await POKEDEX_ENTRY.find()
       .sort({
         Pokedex_ID: 'ascending',
+        Alt_ID: 'ascending',
       })
       .collation({
         locale: 'en_US',
