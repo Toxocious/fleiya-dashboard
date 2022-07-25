@@ -1,6 +1,5 @@
 import { Text, createStyles } from '@mantine/core';
 
-import { FeatureCard } from '@components/feature_card';
 import { FeatureList } from '@constants/feature_list';
 
 import PokeOneIcon from '@assets/PokeOne.ico';
@@ -74,7 +73,8 @@ export const FeaturesPage = () => {
 
         <div className={classes.cardContainer}>
           {FeatureList.filter((feature) => !feature.premium).map((feature) => (
-            <FeatureCard key={feature.id} {...feature} />
+            //<FeatureCard key={feature.id} {...feature} />
+            <></>
           ))}
         </div>
       </section>
@@ -106,7 +106,8 @@ export const FeaturesPage = () => {
 
         <div className={classes.cardContainer}>
           {FeatureList.filter((feature) => feature.premium).map((feature) => (
-            <FeatureCard key={feature.id} {...feature} />
+            // <FeatureCard key={feature.id} {...feature} />
+            <></>
           ))}
         </div>
       </section>
