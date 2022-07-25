@@ -10,7 +10,7 @@
 
 .card.gradient {
   border-left: 4px solid #FAB795;
-  padding: 1em 0;
+  padding: 0.5em 0;
 }
 
 .card.gradient:hover {
