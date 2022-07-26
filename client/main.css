@@ -54,6 +54,17 @@ a:hover {
   color: #F43E5C;
 }
 
+input[type='text'] {
+  font-family: "Nunito";
+  font-size: 1em;
+  border-radius: 6px;
+  padding: 3px;
+
+  background-color: #232530;
+  border: 1px solid #FAB28E;
+}
+
+
 .separator::before {
   background-color: #FAB795;
   background-image: linear-gradient(left, #2E303E 2%, #FAB795 50%);
@@ -148,4 +159,25 @@ a:hover {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1em;
+}
+
+.App > main .page-header {
+  display: flex;
+  align-items: center;
+
+  padding: 0 1em 1em;
+}
+
+.App > main .page-header > aside {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
+  margin-left: auto;
+  text-align: center;
+}
+
+.App > main .page-header > aside > div {
+  display: flex;
+  justify-content: space-between;
 }
