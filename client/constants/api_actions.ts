@@ -3,4 +3,5 @@ export const enum API_ACTIONS {
   UPDATE,
   DELETE,
   GET_ALL,
+  GET_ONE,
 }

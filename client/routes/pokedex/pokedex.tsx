@@ -6,7 +6,7 @@ import { PokedexList } from '@components/pokedex_list';
 
 import { GET_POKEDEX_ENTRIES } from '@actions/pokedex_entry';
 
-export const PokedexPage = (props: any) => {
+export const PokedexPage = () => {
   const [filter, setFilter] = useState('Gen 1');
   const dispatch = useDispatch();
 

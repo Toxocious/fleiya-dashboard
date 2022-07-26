@@ -1,13 +1,12 @@
 import { Suspense } from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
-import { Loader } from '@mantine/core';
-
 import { Header } from '@components/header';
 import { Footer } from '@components/footer';
 import { UserBar } from '@components/user_bar';
+import { LoadingSvg } from '@components/loading_svg';
 
-import { PokedexEntry } from '@components/pokedex_entry';
+import { PokedexEntry } from '@features/pokedex_entry';
 
 import { HomePage } from '@routes/home';
 import { FeaturesPage } from '@routes/features';
@@ -26,7 +25,7 @@ export const App = () => {
         <Header />
         <UserBar />
 
-        <Suspense fallback={<Loader color='teal' />}>
+        <Suspense fallback={<LoadingSvg />}>
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/pokedex' element={<PokedexPage />} />
