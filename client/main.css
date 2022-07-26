@@ -168,6 +168,10 @@ input[type='text'] {
   padding: 0 1em 1em;
 }
 
+.App > main .page-header.center {
+  justify-content: center;
+}
+
 .App > main .page-header > aside {
   display: flex;
   flex-direction: column;
@@ -180,4 +184,14 @@ input[type='text'] {
 .App > main .page-header > aside > div {
   display: flex;
   justify-content: space-between;
+}
+
+.App > main > aside {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+
+  max-width: 350px;
 }

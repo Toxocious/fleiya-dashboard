@@ -1,4 +1,4 @@
-import { PokedexCard } from '@components/pokedex_card';
+import { PokemonIcon } from '@components/pokemon_icon';
 
 export const PokedexList = (props: any) => {
   const { PokedexEntries, Filter } = props;
@@ -37,7 +37,7 @@ export const PokedexList = (props: any) => {
   return (
     <div className='flex-row'>
       {FILTERED_LIST.map((entry: any) => (
-        <PokedexCard key={entry.ID} {...entry} />
+        <PokemonIcon key={entry.ID} Has_Link={true} {...entry} />
       ))}
     </div>
   );
