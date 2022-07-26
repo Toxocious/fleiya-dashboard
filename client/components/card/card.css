@@ -1,11 +1,16 @@
 .card {
   background-color: #232530;
-  border: 1px solid #1C1E26;
+  border: 1px solid #FAB795;
 
   border-radius: 0.5em;
   width: 20em;
 
   transition: all 150ms ease-in-out;
+}
+
+.card.grassland {
+  background-image: url('/assets/backgrounds/grasslands.png');
+  background-position: center;
 }
 
 .card.gradient {
@@ -22,4 +27,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.card.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.flex-center.column {
+  flex-direction: column;
 }

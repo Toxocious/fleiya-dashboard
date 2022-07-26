@@ -1,10 +1,13 @@
 import './card_section.css';
 
 export const CardSection = (props: any) => {
-  const { children, style } = props;
+  const { children, style, variant } = props;
 
   return (
-    <div className='card_section' style={{ ...(style ?? '') }}>
+    <div
+      className={'card_section' + ` ${variant ?? ''}`}
+      style={{ ...(style ?? '') }}
+    >
       {children}
     </div>
   );

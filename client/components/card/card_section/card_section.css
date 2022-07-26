@@ -3,3 +3,9 @@
   align-items: center;
   justify-content: center;
 }
+
+.card_section.glass {
+  backdrop-filter: blur(2px) saturate(180%);
+    -webkit-backdrop-filter: blur(2px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+}
