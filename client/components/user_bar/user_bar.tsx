@@ -52,7 +52,8 @@ const NavLink = (link_data: any) => {
     return (
       <li
         className={link_data.active ? 'active' : ''}
-        onClick={() => setShowDropdown(!showDropdown)}
+        onMouseEnter={() => setShowDropdown(true)}
+        onMouseLeave={() => setShowDropdown(false)}
       >
         <div className='nav-item'>
           <span>
