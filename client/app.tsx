@@ -9,7 +9,6 @@ import { LoadingSvg } from '@components/loading_svg';
 import { PokedexEntry } from '@features/pokedex_entry';
 
 import { HomePage } from '@routes/home';
-import { FeaturesPage } from '@routes/features';
 import { PokedexPage } from '@routes/pokedex';
 import { ItemdexPage } from '@routes/itemdex';
 import { GuidesPage } from '@routes/guides';
@@ -33,7 +32,6 @@ export const App = () => {
             <Route path='/itemdex' element={<ItemdexPage />} />
             <Route path='/guides' element={<GuidesPage />} />
             <Route path='/explorer' element={<ExplorerPage />} />
-            <Route path='/features' element={<FeaturesPage />} />
             <Route path='/changelog' element={<ChangelogPage />} />
           </Routes>
         </Suspense>
