@@ -1,8 +1,6 @@
 import { Card } from '@components/card';
 import { SocialCards } from '@features/social_links';
 
-import ChristmasThumbail from '@assets/thumbnails/christmas-event-thumbnail.png';
-
 export const HomePage = () => {
   return (
     <main>
@@ -39,7 +37,7 @@ export const HomePage = () => {
           <Card>
             <Card.Section>
               <img
-                src={ChristmasThumbail}
+                src='/thumbnails/christmas-event-thumbnail.png'
                 style={{
                   borderRadius: '6px 6px 0 0',
                   height: 260,

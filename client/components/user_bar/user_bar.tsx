@@ -7,15 +7,13 @@ import { Dropdown } from '@components/dropdown';
 
 import { NavigationItems } from '@constants/navigation_items';
 
-import MockAvatar from '@assets/avatar.jpeg';
-
 import './user_bar.scss';
 
 const mock_user = {
   user_id: 1,
   user_name: 'Toxocious',
   membership: 'Premium',
-  avatar: MockAvatar,
+  avatar: '/avatar.jpeg',
 };
 
 export const UserBar = () => {

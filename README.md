@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./client/assets/PokeOne.ico" title="Fleiya Dashboard Logo" alt="Fleiya Dashboard Logo" />
+  <img src="../static/PokeOne.ico" title="Fleiya Dashboard Logo" alt="Fleiya Dashboard Logo" />
   <h1 align="center">Fleiya Dashboard</h1>
 
   **Fleiya Dashboard** is the web-facing user interface for Fleiya &mdash; an injectable Windows .dll that enhances the user's playing experience with quality-of-life updates &mdash; which provides the end-user with a variety of information &mdash; Pok&eacute;dex information, item information, guides for in-game content, and more &mdash; in a single place.

@@ -1,5 +1,3 @@
-import PokeOneIcon from '@assets/PokeOne.ico';
-
 import './header.scss';
 
 export const Header = () => {
@@ -7,7 +5,7 @@ export const Header = () => {
     <header>
       <div className='header_container'>
         <div className='logo'>
-          <img src={PokeOneIcon} />
+          <img src='/PokeOne.ico' />
           <h1>Fleiya</h1>
         </div>
       </div>

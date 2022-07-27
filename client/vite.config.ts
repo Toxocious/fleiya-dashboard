@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  publicDir: '../static',
   root: './',
   base: './',
   build: {
@@ -16,7 +17,6 @@ export default defineConfig({
     alias: {
       '@actions': path.resolve(__dirname, './actions'),
       '@api': path.resolve(__dirname, './api'),
-      '@assets': path.resolve(__dirname, './assets'),
       '@components': path.resolve(__dirname, './components'),
       '@constants': path.resolve(__dirname, './constants'),
       '@context': path.resolve(__dirname, './context'),

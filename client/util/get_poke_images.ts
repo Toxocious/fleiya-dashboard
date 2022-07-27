@@ -42,12 +42,10 @@ export const GetPokemonImages = (Pokedex_ID: any, Forme: any = '') => {
       break;
   }
 
-  const POKEMON_SPRITE = `/assets/pokemon/sprites/${
+  const POKEMON_SPRITE = `/pokemon/sprites/${
     PADDED_POKEDEX_ID + Forme_Suffix
   }.png`;
-  const POKEMON_ICON = `/assets/pokemon/icons/${
-    PADDED_POKEDEX_ID + Forme_Suffix
-  }.png`;
+  const POKEMON_ICON = `/pokemon/icons/${PADDED_POKEDEX_ID + Forme_Suffix}.png`;
 
   return {
     Sprite: POKEMON_SPRITE,
