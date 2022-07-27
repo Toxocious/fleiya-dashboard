@@ -3,7 +3,7 @@ import { CardSection } from './card_section';
 import './card.scss';
 
 export const Card = (props: any) => {
-  const { variant, background, padding, gap } = props;
+  const { variant, background, width, padding, gap } = props;
 
   return (
     <div
@@ -11,6 +11,7 @@ export const Card = (props: any) => {
       style={{
         padding: padding,
         gap: gap,
+        width: width,
       }}
     >
       {props.children}

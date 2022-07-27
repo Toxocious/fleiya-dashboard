@@ -1,40 +1,41 @@
-import { Paper, List } from '@mantine/core';
+import { useEffect, useState } from 'react';
+
+import { Card } from '@components/card';
 
 import { Changelog } from '@constants/changelog';
 
 export const ChangelogPage = () => {
-  return (
-    <div
-      className='page'
-      style={{
-        gap: 0,
-      }}
-    >
-      <section>
-        <h2>Changelog</h2>
-        <hr />
-      </section>
+  const [lastUpdatedOn, setLastUpdatedOn] = useState('');
 
-      <section
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          textAlign: 'left',
-        }}
-      >
+  useEffect(() => {
+    const LAST_CHANGELOG = Changelog.sort((a, b) => b.id - a.id)[0] ?? 'never';
+
+    const LAST_UPDATE = LAST_CHANGELOG?.date;
+
+    setLastUpdatedOn(LAST_UPDATE);
+  }, undefined);
+
+  return (
+    <main>
+      <div className='page-header'>
+        <h1>Changelog</h1>
+        <aside>Last Updated: {lastUpdatedOn}</aside>
+      </div>
+
+      <div>
         {Changelog.sort((a, b) => b.id - a.id).map((log) => (
           <>
-            <h2>{log.date}</h2>
-            <Paper shadow='md' radius='md' p='md' withBorder>
-              <List>
+            <h2 className='separator'>{log.date}</h2>
+            <Card width='100%'>
+              <ul>
                 {log.changes.map((change) => (
-                  <List.Item>{change}</List.Item>
+                  <li>{change}</li>
                 ))}
-              </List>
-            </Paper>
+              </ul>
+            </Card>
           </>
         ))}
-      </section>
-    </div>
+      </div>
+    </main>
   );
 };

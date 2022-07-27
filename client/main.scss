@@ -67,6 +67,8 @@ input {
 }
 
 .separator {
+  text-align: center;
+
   &::before {
     background-color: #FAB795;
     background-image: linear-gradient(left, #2E303E 2%, #FAB795 50%);
