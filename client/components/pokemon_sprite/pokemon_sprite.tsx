@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { GetPokemonImages } from '@util/get_poke_images';
 
-import './pokemon_sprite.css';
+import './pokemon_sprite.scss';
 
 interface iPokemonSprite {
   ID: string;

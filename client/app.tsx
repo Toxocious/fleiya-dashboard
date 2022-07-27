@@ -16,7 +16,7 @@ import { GuidesPage } from '@routes/guides';
 import { ExplorerPage } from '@routes/explorer';
 import { ChangelogPage } from '@routes/changelog';
 
-import './main.css';
+import './app.scss';
 
 export const App = () => {
   return (

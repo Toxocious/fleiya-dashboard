@@ -7,7 +7,7 @@ import { MAIN_REDUCER } from './reducers';
 
 import { App } from './app';
 
-import './main.css';
+import './main.scss';
 
 const STORE = configureStore({ reducer: MAIN_REDUCER });
 

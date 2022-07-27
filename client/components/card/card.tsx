@@ -1,6 +1,6 @@
 import { CardSection } from './card_section';
 
-import './card.css';
+import './card.scss';
 
 export const Card = (props: any) => {
   const { variant, background, padding, gap } = props;

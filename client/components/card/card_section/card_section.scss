@@ -1,0 +1,12 @@
+.card_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.glass {
+    backdrop-filter: blur(2px) saturate(180%);
+      -webkit-backdrop-filter: blur(2px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+  }
+}
+

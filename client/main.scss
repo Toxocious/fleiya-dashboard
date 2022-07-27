@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+
+:root {
+  font-family: "Nunito", Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #2E303E;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+
+  &:hover {
+    border-color: #646cff;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+
+a {
+  font-weight: 500;
+  color: #E95678;
+  text-decoration: inherit;
+
+  &:hover {
+    color: #F43E5C;
+  }
+}
+
+input {
+  &[type='text'] {
+    font-family: "Nunito";
+    font-size: 1em;
+    border-radius: 6px;
+    padding: 3px;
+
+    background-color: #232530;
+    border: 1px solid #FAB28E;
+  }
+}
+
+.separator {
+  &::before {
+    background-color: #FAB795;
+    background-image: linear-gradient(left, #2E303E 2%, #FAB795 50%);
+    background-image: -o-linear-gradient(left,
+        #2E303E 2%,
+        #FAB795 50%);
+    background-image: -moz-linear-gradient(left,
+        #2E303E 2%,
+        #FAB795 50%);
+    background-image: -webkit-linear-gradient(left,
+        #2E303E 2%,
+        #FAB795 50%);
+    background-image: -ms-linear-gradient(left,
+        #2E303E 2%,
+        #FAB795 50%);
+    background-image: -webkit-gradient(linear,
+        left bottom,
+        right bottom,
+        color-stop(0.02, #2E303E),
+        color-stop(0.5, #FAB795));
+
+    border: none;
+
+    content: '';
+    display: block;
+    order: 1;
+
+    transform: translateY(12px);
+    height: 1px;
+    width: 38%;
+    flex: 38%;
+  }
+
+  &::after {
+    background-color: #FAB795;
+    background-image: linear-gradient(right, #2E303E 2%, #FAB795 50%);
+    background-image: -o-linear-gradient(right,
+        #2E303E 2%,
+        #FAB795 50%);
+    background-image: -moz-linear-gradient(right,
+        #2E303E 2%,
+        #FAB795 50%);
+    background-image: -webkit-linear-gradient(right,
+        #2E303E 2%,
+        #FAB795 50%);
+    background-image: -ms-linear-gradient(right,
+        #2E303E 2%,
+        #FAB795 50%);
+    background-image: -webkit-gradient(linear,
+        right bottom,
+        left bottom,
+        color-stop(0.02, #2E303E),
+        color-stop(0.5, #FAB795));
+
+    content: '';
+    display: block;
+    margin-left: auto;
+
+    transform: translateY(-12px);
+    height: 1px;
+    width: 38%;
+    flex: 38%;
+  }
+}
+
+#root {
+  width: 100%;
+}

@@ -1,4 +1,4 @@
-import './card_section.css';
+import './card_section.scss';
 
 export const CardSection = (props: any) => {
   const { children, style, variant } = props;

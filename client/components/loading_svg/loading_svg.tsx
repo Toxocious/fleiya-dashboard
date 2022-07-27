@@ -1,4 +1,4 @@
-import './loading_svg.css';
+import './loading_svg.scss';
 
 export const LoadingSvg = () => {
   return (

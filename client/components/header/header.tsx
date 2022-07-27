@@ -1,6 +1,6 @@
 import PokeOneIcon from '@assets/PokeOne.ico';
 
-import './header.css';
+import './header.scss';
 
 export const Header = () => {
   return (

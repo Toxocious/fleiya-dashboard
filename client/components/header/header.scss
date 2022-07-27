@@ -1,0 +1,50 @@
+header {
+  background-image: url('https://pokeonecommunity.com/templates/rp/assets/images/bg-top.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+
+  & > .header_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    max-width: min(1000px, 100%);
+    margin: 0 auto;
+    padding: 1em 0;
+
+    & > .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1em;
+      margin-left: 1em;
+
+      & > img {
+        height: 48px;
+        width: 48px;
+
+        animation-name: spin;
+        animation-duration: 5000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      & > h1 {
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

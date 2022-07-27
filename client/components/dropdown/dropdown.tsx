@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import './dropdown.css';
+import './dropdown.scss';
 
 export const Dropdown = (props: any) => {
   const { links, hidden } = props;

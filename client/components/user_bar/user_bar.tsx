@@ -9,7 +9,7 @@ import { NavigationItems } from '@constants/navigation_items';
 
 import MockAvatar from '@assets/avatar.jpeg';
 
-import './user_bar.css';
+import './user_bar.scss';
 
 const mock_user = {
   user_id: 1,

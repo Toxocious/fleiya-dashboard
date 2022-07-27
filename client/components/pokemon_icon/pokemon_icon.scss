@@ -10,9 +10,9 @@
 
   height: 50px;
   width: 50px;
-}
 
-.pokedex-icon:hover {
-  background-color: #6C6F93;
-  cursor: pointer;
+  &:hover {
+    background-color: #6C6F93;
+    cursor: pointer;
+  }
 }

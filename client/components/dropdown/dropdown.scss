@@ -1,0 +1,41 @@
+.dropdown {
+  box-shadow: rgb(250, 183, 149, 0.50) 0px 0px 4px;
+  background: #232530;
+
+  border-radius: 0.5em;
+
+  top: calc(134px + 1.5em);
+  width: 200px;
+
+  position: absolute;
+  z-index: 2;
+
+  &.hidden {
+    display: none;
+  }
+
+  & > div {
+    text-align: center;
+
+    & > a {
+      display: block;
+      padding: 0.5em;
+
+      color: #FAB28E;
+
+      &:hover {
+        background: #1C1E26;
+      }
+    }
+
+    &:first-child:not(:last-child) > a,
+    &:first-child:not(:last-child) > a:hover {
+      border-radius: 0.5em 0.5em 0 0;
+    }
+
+    &:last-child:not(:first-child) > a,
+    &:last-child:not(:first-child) > a:hover {
+      border-radius: 0 0 0.5em 0.5em;
+    }
+  }
+}

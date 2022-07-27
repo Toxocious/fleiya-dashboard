@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { GetPokemonImages } from '@util/get_poke_images';
 
-import './pokemon_icon.css';
+import './pokemon_icon.scss';
 
 interface iPokemonIcon {
   ID: string;
