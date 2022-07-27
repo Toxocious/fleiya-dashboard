@@ -28,9 +28,6 @@
       "@api/*": [
         "./client/api/*",
       ],
-      "@assets/*": [
-        "./client/assets/*",
-      ],
       "@components/*": [
         "./client/components/*",
       ],
