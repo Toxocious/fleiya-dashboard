@@ -10,8 +10,6 @@
     "lint-prettier": "prettier --write && git add"
   },
   "dependencies": {
-    "@mantine/core": "^4.2.11",
-    "@mantine/hooks": "^4.2.11",
     "@reduxjs/toolkit": "^1.8.3",
     "axios": "^0.27.2",
     "cors": "^2.8.5",
