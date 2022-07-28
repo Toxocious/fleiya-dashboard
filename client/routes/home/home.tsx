@@ -9,7 +9,9 @@ export const HomePage = () => {
           textAlign: 'center',
         }}
       >
-        <h1 className='separator'>Fleiya</h1>
+        <h1 className='separator'>
+          <span>What Is Fleiya?</span>
+        </h1>
 
         <div>
           <p>
@@ -36,7 +38,9 @@ export const HomePage = () => {
 
         <br />
 
-        <h1 className='separator'>News</h1>
+        <h1 className='separator'>
+          <span>Recent News</span>
+        </h1>
 
         <div className='flex-row'>
           <Card>

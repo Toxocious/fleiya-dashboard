@@ -67,7 +67,7 @@ input {
 }
 
 .separator {
-  text-align: center;
+  display: flex;
 
   &::before {
     background-color: #FAB795;
@@ -90,16 +90,16 @@ input {
         color-stop(0.02, #2E303E),
         color-stop(0.5, #FAB795));
 
-    border: none;
-
     content: '';
     display: block;
-    order: 1;
 
     transform: translateY(12px);
+
     height: 1px;
-    width: 38%;
-    flex: 38%;
+
+    min-width: 60px;
+    width: 60px;
+    flex: 60px;
   }
 
   &::after {
@@ -125,12 +125,17 @@ input {
 
     content: '';
     display: block;
-    margin-left: auto;
 
-    transform: translateY(-12px);
+    transform: translateY(12px);
     height: 1px;
-    width: 38%;
-    flex: 38%;
+
+    flex: 100;
+  }
+
+  & > span {
+    display: flex;
+    flex: auto;
+    padding: 0 10px;
   }
 }
 
