@@ -4,12 +4,6 @@ import { SocialCards } from '@features/social_links';
 export const HomePage = () => {
   return (
     <main>
-      <div className='flex-row'>
-        <SocialCards />
-      </div>
-
-      <br />
-
       <div
         style={{
           textAlign: 'center',
@@ -26,6 +20,17 @@ export const HomePage = () => {
             Pok&eacute;mon, as well as tools to help you determine the necessary
             IVs needed to have a specifically typed Hidden Power, among other
             things.
+          </p>
+
+          <br />
+
+          <p>
+            <a
+              href='https://mega.nz/file/8FNCRBBB#eFp1bAzTzpdqU_uNdFpDHVj_eZflLdDJ7aDDresQeZ8'
+              style={{ fontSize: '2em' }}
+            >
+              Download Pok&eacute;One For Free
+            </a>
           </p>
         </div>
 
