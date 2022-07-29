@@ -1,0 +1,38 @@
+section.user_data {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  gap: 1em;
+
+  border-bottom: 1px solid transparent;
+
+  line-height: 1.2em;
+  margin: 0 1em;
+
+  height: 56px;
+  max-height: 56px;
+
+  transition: all 100ms ease-in-out;
+
+  &:hover {
+    border-color: var(--ui-gold);
+    cursor: pointer;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+
+    & > img {
+      border: 1px solid var(--ui-monochrome-06);
+      border-radius: 0.5em;
+
+      height: 38px;
+      width: 38px;
+    }
+  }
+}

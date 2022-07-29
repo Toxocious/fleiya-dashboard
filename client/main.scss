@@ -1,14 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
 
 :root {
+  --ui-monochrome-01: #16161C;
+  --ui-monochrome-02: #1A1C23;
+  --ui-monochrome-03: #1C1E26;
+  --ui-monochrome-04: #232530;
+  --ui-monochrome-05: #2E303E;
+  --ui-monochrome-06: #6C6F93;
+
+  --ui-dark-pink: #E9436F;
+  --ui-light-pink: #E95379;
+  --ui-red: #F43E5C;
+  --ui-light-green: #09F7A0;
+  --ui-dark-green: #27D796;
+  --ui-blue: #21BFC2;
+  --ui-gold: #FAB28E;
+
+  --syntax-purple: #B877DB;
+  --syntax-blue: #25B2BC;
+  --syntax-red: #E95678;
+  --syntax-orange: #F09383;
+  --syntax-gold: #FAB795;
+  --syntax-yellow: #FAC29A;
+
+  --syntax-grey: #D3D3D3;
+  --syntax-white: #fffc;
+  --syntax-black: #000c;
+}
+
+html {
   font-family: "Nunito", Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #2E303E;
+  color: var(--syntax-white);
+  background-color: var(--ui-monochrome-01);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

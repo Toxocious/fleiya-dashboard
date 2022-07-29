@@ -1,8 +1,21 @@
 footer {
-  background-color: #232530;
-  box-shadow: rgb(250, 183, 149, 0.50) 0px 0px 10px;
+  background-color: var(--ui-monochrome-04);
 
   margin-top: auto;
+  position: relative;
+
+  &::before {
+    align-items: center;
+    animation: animation-wave-x 10s linear infinite reverse;
+    background-repeat: no-repeat;
+    background: linear-gradient(90deg, #fff0 70%, #fff6 95%, #fff0);
+    background-size: 500% 500%;
+    content: " ";
+    height: 1px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 
   & > .footer_container {
     display: flex;
@@ -22,13 +35,13 @@ footer {
       margin: 0 1em 0 auto;
 
       & > a {
-        color: #FAB795;
+        color: var(--ui-monochrome-06);
 
         font-size: 2.5em;
         transition: all 100ms ease-in-out;
 
         &:hover {
-          color: #F09383;
+          color: var(--ui-gold);
         }
       }
     }
