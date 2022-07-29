@@ -28,7 +28,7 @@ section.user_data {
     gap: 0.5em;
 
     & > img {
-      border: 1px solid var(--ui-monochrome-06);
+      border: 1px solid rgb(var(--ui-monochrome-06-rgb));
       border-radius: 0.5em;
 
       height: 38px;

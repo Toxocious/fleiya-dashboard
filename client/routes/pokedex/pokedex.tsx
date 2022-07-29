@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { LoadingSvg } from '@components/loading_svg';
 import { PokedexList } from '@components/pokedex_list';
@@ -24,43 +25,40 @@ export const PokedexPage = () => {
 
   return (
     <main>
-      <div className='page-header'>
-        <h1>Pokedex</h1>
+      <h1 className='separator'>
+        <span>Pok&eacute;dex</span>
+      </h1>
 
-        <aside>
-          <div>
-            <b>Generation</b>
-            <a href='#' onClick={() => setFilter('Gen 1')}>
-              I
-            </a>
-            <a href='#' onClick={() => setFilter('Gen 2')}>
-              II
-            </a>
-            <a href='#' onClick={() => setFilter('Gen 3')}>
-              III
-            </a>
-            <a href='#' onClick={() => setFilter('Gen 4')}>
-              IV
-            </a>
-            <a href='#' onClick={() => setFilter('Gen 5')}>
-              V
-            </a>
-            <a href='#' onClick={() => setFilter('Gen 6')}>
-              VI
-            </a>
-            <a href='#' onClick={() => setFilter('Gen 7')}>
-              VII
-            </a>
+      <div
+        className='flex-row'
+        style={{
+          gap: '10em',
+          margin: '0 0.5em',
+        }}
+      >
+        <div style={{ textAlign: 'center' }}>
+          <h2>Filter By Generation</h2>
+          <div className='flex-row' style={{ maxWidth: '220px' }}>
+            {[1, 2, 3, 4, 5, 6, 7].map((gen) => (
+              <button onClick={() => setFilter(`Gen ${gen}`)}>{gen}</button>
+            ))}
           </div>
-          <div>
+        </div>
+
+        <div style={{ textAlign: 'center' }}>
+          <h2>Filter By Name</h2>
+          <div className='input-field'>
             <input
               type='text'
               placeholder='Search For A Pok&eacute;mon'
               onChange={inputHandler}
             />
           </div>
-        </aside>
+        </div>
       </div>
+
+      <br />
+      <br />
 
       <div className='flex-row'>
         {typeof ENTRIES?.POKEDEX_ENTRIES?.payload == 'undefined' ? (

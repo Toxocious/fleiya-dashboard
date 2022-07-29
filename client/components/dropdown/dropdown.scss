@@ -1,5 +1,5 @@
 .dropdown {
-  background: var(--ui-monochrome-04);
+  background: rgba(var(--ui-monochrome-04-rgb));
 
   border-radius: 0 0 0.5em 0.5em;
 
@@ -24,7 +24,7 @@
       color: var(--ui-gold);
 
       &:hover {
-        background: var(--ui-monochrome-02);
+        background: rgb(var(--ui-monochrome-02-rgb));
       }
     }
 
