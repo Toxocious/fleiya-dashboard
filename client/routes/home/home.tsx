@@ -6,7 +6,9 @@ export const HomePage = () => {
       <FeaturedNews />
 
       <main>
-        <h2>Fleiya</h2>
+        <h2 className='separator'>
+          <span>Fleiya</span>
+        </h2>
 
         <p>
           Fleiya is a public resource for the community, providing a plethora of

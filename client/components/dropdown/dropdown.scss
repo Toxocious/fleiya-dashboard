@@ -3,7 +3,7 @@
 
   border-radius: 0 0 0.5em 0.5em;
 
-  top: calc(32px + 1.5em);
+  top: calc(30px + 1.5em);
   width: 200px;
 
   position: absolute;
@@ -17,6 +17,7 @@
     text-align: center;
 
     & > a {
+      border-bottom: none;
       display: block;
       padding: 0.5em;
 
@@ -25,11 +26,6 @@
       &:hover {
         background: var(--ui-monochrome-02);
       }
-    }
-
-    &:first-child:not(:last-child) > a,
-    &:first-child:not(:last-child) > a:hover {
-      border-radius: 0.5em 0.5em 0 0;
     }
 
     &:last-child:not(:first-child) > a,

@@ -35,10 +35,11 @@ footer {
       margin: 0 1em 0 auto;
 
       & > a {
-        color: var(--ui-monochrome-06);
-
+        border: none;
         font-size: 2.5em;
         transition: all 100ms ease-in-out;
+
+        color: var(--ui-monochrome-06);
 
         &:hover {
           color: var(--ui-gold);
