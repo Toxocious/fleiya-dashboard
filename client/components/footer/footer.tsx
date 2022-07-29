@@ -7,15 +7,7 @@ export const Footer = () => {
         <div className='copyright'>
           Fleiya &copy; 2022 Toxocious
           <br />
-          Pok&eacute;mon &copy; Nintendo/Creatures Inc./Game Freak Inc, please
-          support the{' '}
-          <a
-            href='http://pokemon.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            official release.
-          </a>
+          Pok&eacute;mon &copy; Nintendo, Creatures Inc., Game Freak Inc.
         </div>
 
         <div className='social-links'>
