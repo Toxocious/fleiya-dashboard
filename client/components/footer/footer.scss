@@ -28,6 +28,7 @@ footer {
 
     & > .social-links {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 0.5em;
@@ -35,11 +36,10 @@ footer {
       margin: 0 1em 0 auto;
 
       & > a {
-        border: none;
-        font-size: 2.5em;
+        font-size: 1.1em;
         transition: all 100ms ease-in-out;
 
-        color: var(--ui-monochrome-06);
+        color: var(--syntax-orange);
 
         &:hover {
           color: var(--ui-gold);
