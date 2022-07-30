@@ -6,6 +6,7 @@ section.user_data {
   gap: 1em;
 
   border-bottom: 1px solid transparent;
+  position: relative;
 
   line-height: 1.2em;
   margin: 0 1em;
@@ -33,6 +34,11 @@ section.user_data {
 
       height: 38px;
       width: 38px;
+    }
+
+    &.dropdown {
+      position: absolute;
+      right: -1em;
     }
   }
 }
