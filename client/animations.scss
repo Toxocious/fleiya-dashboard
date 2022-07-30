@@ -1,0 +1,26 @@
+@keyframes animation-wave-x {
+  0% {
+    background-position-x: -200%
+  }
+
+  to {
+    background-position-x: 200%
+  }
+}
+
+@keyframes add-rectangle-pulse {
+
+  0%,
+  20% {
+    fill: #fff
+  }
+
+  30% {
+    fill: #dadadf
+  }
+
+  80%,
+  to {
+    fill: #fff
+  }
+}

@@ -3,7 +3,32 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  position: relative;
   width: 100%;
+
+  &::before {
+    backdrop-filter: blur(2px) saturate(150%);
+    -webkit-backdrop-filter: blur(2px) saturate(150%);
+    content: '';
+
+    position: absolute;
+    height: 100px;
+    width: 100%;
+  }
+
+  &::after {
+    align-items: center;
+    animation: animation-wave-x 10s linear infinite reverse;
+    background-repeat: no-repeat;
+    background: linear-gradient(90deg, #fff0 70%, #fff6 95%, #fff0);
+    background-size: 500% 500%;
+    content: " ";
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 
   & > .header_container {
     display: flex;
@@ -12,7 +37,6 @@ header {
 
     max-width: min(1000px, 100%);
     margin: 0 auto;
-    padding: 1em 0;
 
     & > .logo {
       display: flex;
@@ -22,8 +46,8 @@ header {
       margin-left: 1em;
 
       & > img {
-        height: 48px;
-        width: 48px;
+        height: 32px;
+        width: 32px;
 
         animation-name: spin;
         animation-duration: 5000ms;
@@ -33,6 +57,9 @@ header {
 
       & > h1 {
         letter-spacing: 2px;
+        text-transform: uppercase;
+
+        position: relative;
       }
     }
   }

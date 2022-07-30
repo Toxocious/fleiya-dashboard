@@ -4,17 +4,11 @@ import { Link } from 'react-router-dom';
 import { ChevronDown } from 'tabler-icons-react';
 
 import { Dropdown } from '@components/dropdown';
+import { UserData } from '@components/user_bar/user_data';
 
 import { NavigationItems } from '@constants/navigation_items';
 
 import './user_bar.scss';
-
-const mock_user = {
-  user_id: 1,
-  user_name: 'Toxocious',
-  membership: 'Premium',
-  avatar: '/avatar.jpeg',
-};
 
 export const UserBar = () => {
   return (
@@ -28,16 +22,7 @@ export const UserBar = () => {
           </ul>
         </nav>
 
-        <section>
-          <div className='user_data'>
-            <img src={mock_user.avatar} />
-
-            <div>
-              {mock_user.user_name}
-              <i>{mock_user.membership} Membership</i>
-            </div>
-          </div>
-        </section>
+        <UserData />
       </div>
     </div>
   );

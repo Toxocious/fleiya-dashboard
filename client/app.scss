@@ -1,3 +1,5 @@
+@import url('./animations.scss');
+
 .App {
   display: flex;
   flex-direction: column;
@@ -23,9 +25,14 @@
     .flex-row {
       display: flex;
       flex-direction: row;
+      align-items: center;
       justify-content: center;
       flex-wrap: wrap;
       gap: 1em;
+
+      &.space-between {
+        justify-content: space-between;
+      }
     }
 
     .page-header {

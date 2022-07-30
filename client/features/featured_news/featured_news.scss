@@ -1,0 +1,46 @@
+.featured_news {
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 440px;
+  max-height: 440px;
+
+  align-self: center;
+  max-width: 1000px;
+
+
+  & > .feature_title {
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px) saturate(150%);
+    -webkit-backdrop-filter: blur(2px) saturate(150%);
+
+    display: flex;
+    padding: 0 2em;
+
+    & > h3 {
+      margin-left: auto;
+    }
+  }
+
+  & > .feature_description {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px) saturate(150%);
+    -webkit-backdrop-filter: blur(2px) saturate(150%);
+
+    margin-top: auto;
+    padding: 1em 2em;
+
+    & > h3 {
+      margin: 0;
+    }
+  }
+
+  &.christmas {
+    background-image: url('thumbnails/christmas-event-feature-bg.png');
+
+    color: var(--syntax-white);
+  }
+}

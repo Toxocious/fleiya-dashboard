@@ -1,10 +1,12 @@
 .dropdown {
-  box-shadow: rgb(250, 183, 149, 0.50) 0px 0px 4px;
-  background: #232530;
+  background: rgba(var(--ui-monochrome-04-rgb));
 
   border-radius: 0 0 0.5em 0.5em;
 
-  top: calc(131px + 1.5em);
+  display: flex;
+  flex-direction: column !important;
+
+  top: calc(30px + 1.5em);
   width: 200px;
 
   position: absolute;
@@ -16,21 +18,18 @@
 
   & > div {
     text-align: center;
+    width: 100%;
 
     & > a {
+      border-bottom: none;
       display: block;
       padding: 0.5em;
 
-      color: #FAB28E;
+      color: var(--ui-gold);
 
       &:hover {
-        background: #1C1E26;
+        background: rgb(var(--ui-monochrome-02-rgb));
       }
-    }
-
-    &:first-child:not(:last-child) > a,
-    &:first-child:not(:last-child) > a:hover {
-      border-radius: 0.5em 0.5em 0 0;
     }
 
     &:last-child:not(:first-child) > a,
