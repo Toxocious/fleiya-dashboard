@@ -14,6 +14,7 @@ import { GuidesPage } from '@routes/guides';
 import { ExplorerPage } from '@routes/explorer';
 import { ChangelogPage } from '@routes/changelog';
 import { TLevelCalcPage } from '@routes/tl_calc';
+import { HPCalcPage } from '@routes/hp_calc';
 
 import './app.scss';
 
@@ -34,6 +35,7 @@ export const App = () => {
             <Route path='/explorer' element={<ExplorerPage />} />
             <Route path='/changelog' element={<ChangelogPage />} />
             <Route path='/tl_calc' element={<TLevelCalcPage />} />
+            <Route path='/hp_calc' element={<HPCalcPage />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
