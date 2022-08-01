@@ -41,6 +41,10 @@
         justify-content: left;
       }
 
+      &.top {
+        align-items: baseline;
+      }
+
       &.space-between {
         justify-content: space-between;
       }

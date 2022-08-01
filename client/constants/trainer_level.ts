@@ -1,4 +1,10 @@
-export const TRAINER_LEVELS = [
+export type TrainerLevelType = {
+  level: number;
+  required_exp: number;
+  total_exp: number;
+};
+
+export const TRAINER_LEVELS: Array<TrainerLevelType> = [
   { level: 5, required_exp: 110, total_exp: 0 },
   { level: 6, required_exp: 130, total_exp: 110 },
   { level: 7, required_exp: 150, total_exp: 240 },
