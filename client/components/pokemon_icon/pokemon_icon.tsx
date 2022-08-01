@@ -11,9 +11,14 @@ interface iPokemonIcon {
   Has_Link: boolean;
 }
 
-export const PokemonIcon = (props: iPokemonIcon) => {
-  const { ID, Pokemon, Forme, Pokedex_ID, Alt_ID, Has_Link } = props;
-
+export const PokemonIcon = ({
+  ID,
+  Pokemon,
+  Forme,
+  Pokedex_ID,
+  Alt_ID,
+  Has_Link,
+}: iPokemonIcon) => {
   const SPECIES_NAME = !Forme ? Pokemon : `${Pokemon} ${Forme}`;
   const ROUTE_PATH = Alt_ID ? Pokedex_ID : `${Pokedex_ID}.${Alt_ID}`;
 

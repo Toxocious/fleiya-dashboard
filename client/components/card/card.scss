@@ -1,6 +1,5 @@
 .card {
-  background-color: #232530;
-  border: 1px solid #FAB795;
+  background-color: var(--ui-monochrome-04-hex);
 
   border-radius: 0.5em;
   width: 20em;
@@ -8,9 +7,9 @@
   transition: all 150ms ease-in-out;
 
   &.grassland {
-    background-image: url('/backgrounds/grasslands.png');
-    background-position: center;
-  }
+      background-image: url('/backgrounds/grasslands.png');
+      background-position: center;
+    }
 
   &.gradient {
     border-left: 4px solid #FAB795;

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { LoadingSvg } from '@components/loading_svg';
 import { PokedexList } from '@components/pokedex_list';
@@ -30,7 +29,7 @@ export const PokedexPage = () => {
       </h1>
 
       <div
-        className='flex-row'
+        className='flex row'
         style={{
           gap: '10em',
           margin: '0 0.5em',
@@ -38,9 +37,11 @@ export const PokedexPage = () => {
       >
         <div style={{ textAlign: 'center' }}>
           <h2>Filter By Generation</h2>
-          <div className='flex-row' style={{ maxWidth: '220px' }}>
+          <div className='flex row' style={{ maxWidth: '220px' }}>
             {[1, 2, 3, 4, 5, 6, 7].map((gen) => (
-              <button onClick={() => setFilter(`Gen ${gen}`)}>{gen}</button>
+              <button key={gen} onClick={() => setFilter(`Gen ${gen}`)}>
+                {gen}
+              </button>
             ))}
           </div>
         </div>
@@ -60,7 +61,7 @@ export const PokedexPage = () => {
       <br />
       <br />
 
-      <div className='flex-row'>
+      <div className='flex row'>
         {typeof ENTRIES?.POKEDEX_ENTRIES?.payload == 'undefined' ? (
           <LoadingSvg />
         ) : (

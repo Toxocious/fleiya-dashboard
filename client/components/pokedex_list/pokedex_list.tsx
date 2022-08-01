@@ -35,7 +35,7 @@ export const PokedexList = (props: any) => {
   });
 
   return (
-    <div className='flex-row'>
+    <div className='flex row'>
       {FILTERED_LIST.map((entry: any) => (
         <PokemonIcon key={entry.ID} Has_Link={true} {...entry} />
       ))}
