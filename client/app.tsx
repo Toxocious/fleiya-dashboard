@@ -6,10 +6,9 @@ import { Footer } from '@components/footer';
 import { UserBar } from '@components/user_bar';
 import { LoadingSvg } from '@components/loading_svg';
 
-import { PokedexEntry } from '@features/pokedex_entry';
-
 import { HomePage } from '@routes/home';
 import { PokedexPage } from '@routes/pokedex';
+import { PokedexEntry } from '@routes/pokedex_entry';
 import { ItemdexPage } from '@routes/itemdex';
 import { GuidesPage } from '@routes/guides';
 import { ExplorerPage } from '@routes/explorer';

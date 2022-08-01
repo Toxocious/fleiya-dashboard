@@ -26,12 +26,6 @@ export const PokedexEntry = () => {
   const ENTRY: any = useSelector((state) => state);
   const LEADING_ENTRY: any = ENTRY?.POKEDEX_ENTRIES?.payload?.[0];
 
-  console.log(
-    '[Client | Pokedex Entry]',
-    ROUTE_PARAMS,
-    ENTRY?.POKEDEX_ENTRIES?.payload?.[0]
-  );
-
   return (
     <>
       {typeof ENTRY.POKEDEX_ENTRIES.payload == 'undefined' ? (
