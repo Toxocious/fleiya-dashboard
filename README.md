@@ -4,7 +4,7 @@
 
   **Fleiya Dashboard** is the web-facing user interface for Fleiya &mdash; an injectable Windows .dll that enhances the user's playing experience with quality-of-life updates &mdash; which provides the end-user with a variety of information &mdash; Pok&eacute;dex information, item information, guides for in-game content, and more &mdash; in a single place.
 
-  The injectable **Fleiya** .dll will not be open-source for the foreseeable future.
+  This is meant to be an extension to &mdash; or even replacement of &mdash; [Pok&eacute;One Community](https://pokeonecommunity.com/) once it is finished, as the Pok&eacute;One Community website is often quite slow and lacks a fair bit of useful information.
 
   <img src="https://img.shields.io/github/issues/Toxocious/fleiya-dashboard?style=for-the-badge&logo=appveyor" />
   <img src="https://img.shields.io/github/forks/Toxocious/fleiya-dashboard?style=for-the-badge&logo=appveyor" />
@@ -39,6 +39,8 @@
 - TypeScript
 - Express
 - MongoDB
+- Axios
+- Redux
 
 **Server**
 - Node.js
@@ -47,10 +49,14 @@
 - TypeScript
 
 ### Features
-- Front facing user-interface to interact with the server and API
-- Login with Google through Google OAuth
-- Upgrade your account membership through Stripe
-  - Allows access to the Fleiya .dll and all of its enhancements
+- Tracks the latest news in game, such as event releases or new regions
+- Provides a vast number of in-depth guides for various pieces of content
+- Provides a Pok&eacute;dex containing each Pok&eacute;mon's base stats, abilities, obtainable location data, and more
+- Provides an Itemdex containing each item's information (description, stack limit, whether it's obtainable in game) and where it can be obtained in game
+- Provides a variety of useful tools
+  - Calculate the Hidden Power type of a Pok&eacute;mon based on a set of IVs
+  - Calculate the needed Trainer Exp. to go from one trainer level to the next
+- ... and more
 
 
 
