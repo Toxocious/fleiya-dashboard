@@ -39,11 +39,11 @@ const NavLink = (link_data: any) => {
         onMouseLeave={() => setShowDropdown(false)}
       >
         <div className='nav-item'>
-          <span>
+          <span className='nav-item-icon'>
             <link_data.icon size={20} />
           </span>
 
-          {link_data.label}
+          <span className='nav-item-label'>{link_data.label}</span>
 
           <>
             <ChevronDown size={14} />
@@ -57,10 +57,10 @@ const NavLink = (link_data: any) => {
   return (
     <li className={link_data?.active ? 'active' : ''}>
       <Link to={link_data.link ?? ''} className='nav-item'>
-        <span>
+        <span className='nav-item-icon'>
           <link_data.icon size={20} />
         </span>
-        {link_data.label}
+        <span className='nav-item-label'>{link_data.label}</span>
       </Link>
     </li>
   );

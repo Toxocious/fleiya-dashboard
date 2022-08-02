@@ -21,6 +21,7 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
 
     max-width: min(1000px, 100%);
     margin: 0 auto;
@@ -44,6 +45,28 @@ footer {
         &:hover {
           color: var(--ui-gold);
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  footer {
+    & > .footer_container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 2em;
+      padding: 1em 0px;
+
+      text-align: center;
+
+      & > .social-links {
+        display: flex;
+        flex-direction: row;
+
+        margin: 0;
+        width: 100%;
       }
     }
   }

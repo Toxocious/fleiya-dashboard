@@ -89,7 +89,11 @@
               cursor: pointer;
             }
 
-            & > span {
+            & > .nav-item-label {
+              display: flex;
+            }
+
+            & > .nav-item-icon {
               display: flex;
             }
           }
@@ -97,5 +101,29 @@
       }
     }
 
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .user_bar {
+    & > .user_bar_container {
+      & > nav {
+        & > ul {
+          & > li {
+            & > div.nav-item {
+              .nav-item-label {
+                display: none !important;
+              }
+            }
+
+            & > a.nav-item {
+              & > .nav-item-label {
+                display: none !important;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
