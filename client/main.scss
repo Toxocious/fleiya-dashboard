@@ -75,6 +75,45 @@ a {
   }
 }
 
+table {
+  border-spacing: 0.5em;
+  border-radius: 0.5em;
+
+  &.styled {
+    background-color: var(--ui-monochrome-03-hex);
+
+    tr {
+      &:nth-child(odd) {
+        td {
+          background-color: var(--ui-monochrome-05-hex);
+        }
+
+      }
+      td {
+        background-color: var(--ui-monochrome-04-hex);
+        border-radius: 0.5em;
+
+        padding: 2px;
+      }
+    }
+  }
+
+  &.text-center {
+    * {
+      text-align: center;
+    }
+  }
+
+  &.wide {
+    width: 80%;
+    max-width: 800px;
+
+    td {
+      width: 130px;
+    }
+  }
+}
+
 .separator {
   display: flex;
 
@@ -271,6 +310,8 @@ button,
   }
 
   &.pokemon-icon {
+    background-color: var(--ui-monochrome-04-hex);
+
     display: flex;
     align-items: center;
     justify-items: center;
