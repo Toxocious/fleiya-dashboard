@@ -1,26 +1,17 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { trpc } from '@hooks/trpc';
 
 import { LoadingSvg } from '@components/loading_svg';
 import { PokedexList } from '@components/pokedex_list';
 
-import { GET_POKEDEX_ENTRIES } from '@actions/pokedex_entry';
-
 export const PokedexPage = () => {
   const [filter, setFilter] = useState('Gen 1');
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    // @ts-ignore
-    dispatch(GET_POKEDEX_ENTRIES());
-  }, [dispatch]);
+  const allPokemon = trpc.useQuery(['pokemon.allPokemonNoFormes']);
 
   const inputHandler = (e: any) => {
     setFilter(e.target.value.toLowerCase());
-    console.log('filter:', filter);
   };
-
-  const ENTRIES: any = useSelector((state) => state);
 
   return (
     <main>
@@ -62,13 +53,10 @@ export const PokedexPage = () => {
       <br />
 
       <div className='flex row'>
-        {typeof ENTRIES?.POKEDEX_ENTRIES?.payload == 'undefined' ? (
+        {typeof allPokemon?.data == 'undefined' ? (
           <LoadingSvg />
         ) : (
-          <PokedexList
-            PokedexEntries={ENTRIES.POKEDEX_ENTRIES.payload}
-            Filter={filter}
-          />
+          <PokedexList PokedexEntries={allPokemon.data} Filter={filter} />
         )}
       </div>
     </main>
