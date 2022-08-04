@@ -3,7 +3,9 @@ import { PokemonIcon } from '@components/pokemon_icon';
 export const PokedexList = (props: any) => {
   const { PokedexEntries, Filter } = props;
 
-  const FILTERED_LIST = PokedexEntries.json.filter((ENTRY: any) => {
+  console.log(PokedexEntries, Filter);
+
+  const FILTERED_LIST = PokedexEntries.filter((ENTRY: any) => {
     switch (Filter) {
       case '':
         return ENTRY;
