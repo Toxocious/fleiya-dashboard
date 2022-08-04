@@ -1,4 +1,8 @@
-import { Suspense } from 'react';
+import { useState, Suspense } from 'react';
+
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { trpc } from '@hooks/trpc';
+
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import { Header } from '@components/header';
@@ -19,28 +23,39 @@ import { HPCalcPage } from '@routes/hp_calc';
 import './app.scss';
 
 export const App = () => {
+  const [queryClient] = useState(() => new QueryClient());
+  const [trpcClient] = useState(() =>
+    trpc.createClient({
+      url: 'http://localhost:5000/trpc',
+    })
+  );
+
   return (
-    <div className='App'>
-      <BrowserRouter>
-        <Header />
-        <UserBar />
+    <trpc.Provider client={trpcClient} queryClient={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <div className='App'>
+          <BrowserRouter>
+            <Header />
+            <UserBar />
 
-        <Suspense fallback={<LoadingSvg />}>
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/pokedex' element={<PokedexPage />} />
-            <Route path='/pokedex/:id' element={<PokedexEntry />} />
-            <Route path='/itemdex' element={<ItemdexPage />} />
-            <Route path='/guides' element={<GuidesPage />} />
-            <Route path='/explorer' element={<ExplorerPage />} />
-            <Route path='/changelog' element={<ChangelogPage />} />
-            <Route path='/tl_calc' element={<TLevelCalcPage />} />
-            <Route path='/hp_calc' element={<HPCalcPage />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
+            <Suspense fallback={<LoadingSvg />}>
+              <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/pokedex' element={<PokedexPage />} />
+                <Route path='/pokedex/:id' element={<PokedexEntry />} />
+                <Route path='/itemdex' element={<ItemdexPage />} />
+                <Route path='/guides' element={<GuidesPage />} />
+                <Route path='/explorer' element={<ExplorerPage />} />
+                <Route path='/changelog' element={<ChangelogPage />} />
+                <Route path='/tl_calc' element={<TLevelCalcPage />} />
+                <Route path='/hp_calc' element={<HPCalcPage />} />
+              </Routes>
+            </Suspense>
+          </BrowserRouter>
 
-      <Footer />
-    </div>
+          <Footer />
+        </div>
+      </QueryClientProvider>
+    </trpc.Provider>
   );
 };
