@@ -20,6 +20,8 @@ import { ChangelogPage } from '@routes/changelog';
 import { TLevelCalcPage } from '@routes/tl_calc';
 import { HPCalcPage } from '@routes/hp_calc';
 
+import { Http404Page } from '@routes/404';
+
 import './app.scss';
 
 export const App = () => {
@@ -49,6 +51,8 @@ export const App = () => {
                 <Route path='/changelog' element={<ChangelogPage />} />
                 <Route path='/tl_calc' element={<TLevelCalcPage />} />
                 <Route path='/hp_calc' element={<HPCalcPage />} />
+
+                <Route path='*' element={<Http404Page />} />
               </Routes>
             </Suspense>
           </BrowserRouter>

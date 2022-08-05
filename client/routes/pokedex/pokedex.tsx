@@ -7,7 +7,7 @@ import { PokedexList } from '@components/pokedex_list';
 export const PokedexPage = () => {
   const [filter, setFilter] = useState('Gen 1');
 
-  const { data, isFetching } = trpc.useQuery(['pokemon.allPokemonNoFormes']);
+  const { data } = trpc.useQuery(['pokemon.allPokemonNoFormes']);
 
   const inputHandler = (e: any) => {
     setFilter(e.target.value.toLowerCase());
@@ -53,7 +53,7 @@ export const PokedexPage = () => {
       <br />
 
       <div className='flex row'>
-        {isFetching || typeof data?.json == 'undefined' ? (
+        {typeof data?.json == 'undefined' ? (
           <LoadingSvg />
         ) : (
           <PokedexList PokedexEntries={data?.json} Filter={filter} />

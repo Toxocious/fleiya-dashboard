@@ -21,3 +21,4 @@ app.use(
 );
 
 app.listen(5000);
+console.log('[tRPC Server] Listening on port 5000.');
