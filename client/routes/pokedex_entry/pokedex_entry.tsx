@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ChevronRight, Settings } from 'tabler-icons-react';
 
@@ -11,6 +12,8 @@ import { ProgressBar } from '@components/progress_bar';
 import { Card } from '@components/card';
 
 export const PokedexEntry = () => {
+  const [selectedSpecies, setSelectedSpecies]: [any, any] = useState({});
+
   const ROUTE_PARAMS = useParams();
   const SPECIES_ID: string = ROUTE_PARAMS.id ?? '1';
 
@@ -18,6 +21,16 @@ export const PokedexEntry = () => {
     'pokemon.getPokemon',
     { POKEDEX_ID: SPECIES_ID },
   ]);
+
+  if (typeof data === 'undefined') {
+    return <LoadingSvg fullPage />;
+  }
+
+  let speciesData = data[0];
+
+  if (Object.keys(selectedSpecies).length > 0) {
+    speciesData = selectedSpecies;
+  }
 
   return (
     <>
@@ -27,7 +40,7 @@ export const PokedexEntry = () => {
         <main>
           <div className='page-header'>
             <h2>
-              Pok&eacute;dex <ChevronRight /> {data[0].Pokemon}
+              Pok&eacute;dex <ChevronRight /> {speciesData.Pokemon}
             </h2>
 
             <aside>
@@ -46,22 +59,26 @@ export const PokedexEntry = () => {
                   }}
                 >
                   <PokemonSprite
-                    ID={data[0].ID}
-                    Pokemon={data[0].Pokemon}
-                    Forme={data[0].Forme}
-                    Pokedex_ID={data[0].Pokedex_ID}
-                    Alt_ID={data[0].Alt_ID}
+                    ID={speciesData.ID}
+                    Pokemon={speciesData.Pokemon}
+                    Forme={speciesData.Forme}
+                    Pokedex_ID={speciesData.Pokedex_ID}
+                    Alt_ID={speciesData.Alt_ID}
                   />
                 </Card.Section>
               </Card>
 
               <div className='flex row'>
                 {data.length > 0 &&
-                  data
-                    .filter((pokemon) => pokemon.Forme)
-                    .map((FORME: any) => {
-                      return <PokemonIcon key={FORME.Alt_ID} {...FORME} />;
-                    })}
+                  data.map((FORME: any) => {
+                    return (
+                      <PokemonIcon
+                        onClick={() => setSelectedSpecies(FORME)}
+                        key={FORME.Alt_ID}
+                        {...FORME}
+                      />
+                    );
+                  })}
               </div>
             </div>
 
@@ -87,7 +104,7 @@ export const PokedexEntry = () => {
                       <td>
                         <ProgressBar
                           // @ts-ignore
-                          currentValue={parseInt(data[0][stat])}
+                          currentValue={parseInt(speciesData[stat])}
                           maxValue={258}
                           stat={stat}
                         />
