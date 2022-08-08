@@ -40,13 +40,14 @@
 - Express
 - MongoDB
 - Axios
-- Redux
+- tRPC
 
 **Server**
 - Node.js
 - Express
 - MongoDB
 - TypeScript
+- tRPC
 
 ### Features
 - Tracks the latest news in game, such as event releases or new regions
