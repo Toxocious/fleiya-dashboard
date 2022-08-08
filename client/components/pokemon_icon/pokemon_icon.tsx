@@ -38,7 +38,7 @@ export const PokemonIcon = ({
   }
 
   return (
-    <div key={ID} className='button disabled pokemon-icon'>
+    <div key={ID} className='button pokemon-icon'>
       <img src={ENTRY_SPRITES.Icon} alt={Pokemon} />
     </div>
   );

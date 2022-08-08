@@ -53,10 +53,10 @@ export const PokedexPage = () => {
       <br />
 
       <div className='flex row'>
-        {typeof data?.json == 'undefined' ? (
+        {typeof data == 'undefined' ? (
           <LoadingSvg />
         ) : (
-          <PokedexList PokedexEntries={data?.json} Filter={filter} />
+          <PokedexList PokedexEntries={data} Filter={filter} />
         )}
       </div>
     </main>

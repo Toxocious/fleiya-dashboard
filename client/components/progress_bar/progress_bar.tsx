@@ -16,8 +16,10 @@ export const ProgressBar = ({
   let bar_width = 50,
     bar_color = 126;
 
+  console.log('Stat?', stat);
+
   if (stat) {
-    bar_width = (currentValue * 180) / 100;
+    bar_width = (currentValue * 150) / 100;
     if (bar_width > 179) {
       bar_width = 179;
     }

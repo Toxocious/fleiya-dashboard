@@ -1,9 +1,7 @@
-import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { ChevronRight, Settings } from 'tabler-icons-react';
 
-import { GET_POKEDEX_ENTRY } from '@actions/pokedex_entry';
+import { trpc } from '@hooks/trpc';
 
 import { LoadingSvg } from '@components/loading_svg';
 import { PokemonIcon } from '@components/pokemon_icon';
@@ -13,28 +11,23 @@ import { ProgressBar } from '@components/progress_bar';
 import { Card } from '@components/card';
 
 export const PokedexEntry = () => {
-  const dispatch = useDispatch();
-
   const ROUTE_PARAMS = useParams();
-  const SPECIES_ID: any = ROUTE_PARAMS.id;
+  const SPECIES_ID: string = ROUTE_PARAMS.id ?? '1';
 
-  useEffect(() => {
-    // @ts-ignore
-    dispatch(GET_POKEDEX_ENTRY(SPECIES_ID ?? 1));
-  }, [dispatch]);
-
-  const ENTRY: any = useSelector((state) => state);
-  const LEADING_ENTRY: any = ENTRY?.POKEDEX_ENTRIES?.payload?.[0];
+  const { data } = trpc.useQuery([
+    'pokemon.getPokemon',
+    { POKEDEX_ID: SPECIES_ID },
+  ]);
 
   return (
     <>
-      {typeof ENTRY.POKEDEX_ENTRIES.payload == 'undefined' ? (
-        <LoadingSvg />
+      {typeof data == 'undefined' ? (
+        <LoadingSvg fullPage />
       ) : (
         <main>
           <div className='page-header'>
             <h2>
-              Pok&eacute;dex <ChevronRight /> {LEADING_ENTRY.Pokemon}
+              Pok&eacute;dex <ChevronRight /> {data[0].Pokemon}
             </h2>
 
             <aside>
@@ -52,17 +45,23 @@ export const PokedexEntry = () => {
                     height: '12em',
                   }}
                 >
-                  <PokemonSprite {...LEADING_ENTRY} />
+                  <PokemonSprite
+                    ID={data[0].ID}
+                    Pokemon={data[0].Pokemon}
+                    Forme={data[0].Forme}
+                    Pokedex_ID={data[0].Pokedex_ID}
+                    Alt_ID={data[0].Alt_ID}
+                  />
                 </Card.Section>
               </Card>
 
               <div className='flex row'>
-                {ENTRY.POKEDEX_ENTRIES.payload.length > 0 &&
-                  ENTRY.POKEDEX_ENTRIES.payload.map((FORME: any) => {
-                    if (FORME.Alt_ID != 0) {
-                      return <PokemonIcon key={FORME._id} {...FORME} />;
-                    }
-                  })}
+                {data.length > 0 &&
+                  data
+                    .filter((pokemon) => pokemon.Forme)
+                    .map((FORME: any) => {
+                      return <PokemonIcon key={FORME.Alt_ID} {...FORME} />;
+                    })}
               </div>
             </div>
 
@@ -87,7 +86,8 @@ export const PokedexEntry = () => {
                       </td>
                       <td>
                         <ProgressBar
-                          currentValue={parseInt(LEADING_ENTRY[stat])}
+                          // @ts-ignore
+                          currentValue={parseInt(data[0][stat])}
                           maxValue={258}
                           stat={stat}
                         />
