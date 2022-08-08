@@ -17,9 +17,9 @@ export const ProgressBar = ({
     bar_color = 126;
 
   if (stat) {
-    bar_width = (currentValue * 150) / 100;
-    if (bar_width > 179) {
-      bar_width = 179;
+    bar_width = currentValue;
+    if (bar_width > 250) {
+      bar_width = 250;
     }
 
     bar_color = Math.floor((currentValue * 180) / 256);
@@ -40,7 +40,7 @@ export const ProgressBar = ({
           backgroundColor: `hsl(${bar_color}, 85%, 45%)`,
         }}
       ></span>
-      {currentValue}
+      <div>{currentValue}</div>
     </div>
   );
 };
