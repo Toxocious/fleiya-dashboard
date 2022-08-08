@@ -84,18 +84,24 @@ yarn install
 4. Set up en empty MongoDB cluster and set the connection URI in the `./.env` file in the root directory, as well as assign a dedicated port.
 ```sh
 ## MongoDB connection URI
-ATLAS_URI='mongodb+srv://toxocious:u5VPMtI4P0vQ^fS6Tt9C@pokeone-cluster.8h5mgay.mongodb.net/pokeone?retryWrites=true&w=majority';
+## Yours will be unique; copy it here and edit it as neccessary
+ATLAS_URI='mongodb+srv://<USERNAME>:<PASSWORD>@pokeone-cluster.8h5mgay.mongodb.net/pokeone?retryWrites=true&w=majority';
 
 ## Port to run MongoDB instance on
 MONGODB_PORT = 5000;
 ```
 
-5. Start up the client and server (uses the Concurrently npm package).
+5. Generate Prisma schema
+```sh
+npx prisma generate
+```
+
+6. Start up the client and server (uses the Concurrently npm package).
 ```sh
 yarn dev
 ```
 
-6. Visit the links displayed in your terminal to see the client-side and server-side
+7. Visit the links displayed in your terminal to see the client-side and server-side
 
 
 
