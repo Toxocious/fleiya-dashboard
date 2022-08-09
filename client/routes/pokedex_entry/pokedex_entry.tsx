@@ -26,11 +26,12 @@ export const PokedexEntry = () => {
     return <LoadingSvg fullPage />;
   }
 
-  let speciesData = data[0];
-
+  let speciesData: any = data[0];
   if (Object.keys(selectedSpecies).length > 0) {
     speciesData = selectedSpecies;
   }
+
+  console.log(speciesData);
 
   return (
     <main>
@@ -109,6 +110,76 @@ export const PokedexEntry = () => {
               ))}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <br />
+
+      <section>
+        <div>
+          <h2 className='separator'>
+            <span>Misc. Stats</span>
+          </h2>
+        </div>
+
+        <div className='flex row top text-center'>
+          <div>
+            <h2>Abilities</h2>
+            <table className='styled text-center'>
+              <thead>
+                <tr>
+                  <th colSpan={3}></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ability 1</td>
+                  <td>Ability 2</td>
+                  <td>Hidden</td>
+                </tr>
+                <tr>
+                  {['Ability_1', 'Ability_2', 'Hidden_Ability'].map(
+                    (ability) => (
+                      <td>{speciesData[ability] ?? 'N/A'}</td>
+                    )
+                  )}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <h2>EV Yield</h2>
+            <table className='styled text-center'>
+              <thead>
+                <tr>
+                  <th colSpan={6}></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>HP</td>
+                  <td>Atk</td>
+                  <td>Def</td>
+                  <td>SpA</td>
+                  <td>SpD</td>
+                  <td>Spd</td>
+                </tr>
+                <tr>
+                  {[
+                    'HP',
+                    'Attack',
+                    'Defense',
+                    'SpAttack',
+                    'SpDefense',
+                    'Speed',
+                  ].map((ev_stat) => (
+                    <td>{speciesData[`EV_${ev_stat}`] ?? 0}</td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 

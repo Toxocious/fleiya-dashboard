@@ -112,6 +112,10 @@ table {
       width: 130px;
     }
   }
+
+  td {
+    width: 80px;
+  }
 }
 
 .separator {
@@ -189,6 +193,14 @@ table {
 
 #root {
   width: 100%;
+}
+
+@media screen and (max-width: 450px) {
+  table {
+    &.wide {
+      width: 100%;
+    }
+  }
 }
 
 
