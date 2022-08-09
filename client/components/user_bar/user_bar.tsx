@@ -6,7 +6,10 @@ import { ChevronDown } from 'tabler-icons-react';
 import { Dropdown } from '@components/dropdown';
 import { UserData } from '@components/user_bar/user_data';
 
-import { NavigationItems } from '@constants/navigation_items';
+import {
+  NavigationItems,
+  NavigationItemType,
+} from '@constants/navigation_items';
 
 import './user_bar.scss';
 
@@ -16,7 +19,7 @@ export const UserBar = () => {
       <div className='user_bar_container'>
         <nav>
           <ul>
-            {NavigationItems.map((link: any) => (
+            {NavigationItems.map((link: NavigationItemType) => (
               <NavLink key={link.label} {...link} />
             ))}
           </ul>
@@ -28,40 +31,42 @@ export const UserBar = () => {
   );
 };
 
-const NavLink = (link_data: any) => {
+const NavLink = (link_data: NavigationItemType) => {
+  const { label, link, active, links } = link_data;
+
   const [showDropdown, setShowDropdown] = useState(false);
 
-  if (link_data?.links?.length > 0) {
-    return (
-      <li
-        className={link_data.active ? 'active' : ''}
-        onMouseEnter={() => setShowDropdown(true)}
-        onMouseLeave={() => setShowDropdown(false)}
-      >
-        <div className='nav-item'>
-          <span className='nav-item-icon'>
-            <link_data.icon size={20} />
-          </span>
-
-          <span className='nav-item-label'>{link_data.label}</span>
-
-          <>
-            <ChevronDown size={14} />
-            <Dropdown links={link_data.links} hidden={!showDropdown} />
-          </>
-        </div>
-      </li>
-    );
-  }
-
   return (
-    <li className={link_data?.active ? 'active' : ''}>
-      <Link to={link_data.link ?? ''} className='nav-item'>
+    <li
+      className={active ? 'active' : ''}
+      onMouseEnter={() => setShowDropdown(true)}
+      onMouseLeave={() => setShowDropdown(false)}
+    >
+      <ConditionalWrapper
+        condition={link}
+        wrapper={(children: any) => (
+          <Link to={link ?? ''} className='nav-item'>
+            {children}
+          </Link>
+        )}
+      >
         <span className='nav-item-icon'>
           <link_data.icon size={20} />
         </span>
-        <span className='nav-item-label'>{link_data.label}</span>
-      </Link>
+        <span className='nav-item-label'>{label}</span>
+        {links.length > 0 && (
+          <>
+            <ChevronDown size={14} />
+            <Dropdown
+              links={links.filter((link: NavigationItemType) => !link.hidden)}
+              hidden={!showDropdown}
+            />
+          </>
+        )}
+      </ConditionalWrapper>
     </li>
   );
 };
+
+const ConditionalWrapper = ({ condition, wrapper, children }: any) =>
+  condition ? wrapper(children) : <div className='nav-item'>{children}</div>;

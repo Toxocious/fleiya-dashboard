@@ -31,8 +31,6 @@ export const PokedexEntry = () => {
     speciesData = selectedSpecies;
   }
 
-  console.log(speciesData);
-
   return (
     <main>
       <div className='page-header'>
@@ -140,7 +138,7 @@ export const PokedexEntry = () => {
                 <tr>
                   {['Ability_1', 'Ability_2', 'Hidden_Ability'].map(
                     (ability) => (
-                      <td>{speciesData[ability] ?? 'N/A'}</td>
+                      <td key={ability}>{speciesData[ability] ?? 'N/A'}</td>
                     )
                   )}
                 </tr>
@@ -174,7 +172,7 @@ export const PokedexEntry = () => {
                     'SpDefense',
                     'Speed',
                   ].map((ev_stat) => (
-                    <td>{speciesData[`EV_${ev_stat}`] ?? 0}</td>
+                    <td key={ev_stat}>{speciesData[`EV_${ev_stat}`] ?? 0}</td>
                   ))}
                 </tr>
               </tbody>
