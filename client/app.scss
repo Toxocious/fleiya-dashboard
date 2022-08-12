@@ -22,6 +22,14 @@
       max-width: 350px;
     }
 
+    &.absolute-center {
+      height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .flex {
       display: flex;
       align-items: center;
