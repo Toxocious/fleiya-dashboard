@@ -15,11 +15,11 @@ import { PokedexPage } from '@routes/pokedex';
 import { PokedexEntry } from '@routes/pokedex_entry';
 import { ItemdexPage } from '@routes/itemdex';
 import { GuidesPage } from '@routes/guides';
+import { GuideEntry } from '@routes/guide_entry';
 import { ExplorerPage } from '@routes/explorer';
 import { ChangelogPage } from '@routes/changelog';
 import { TLevelCalcPage } from '@routes/tl_calc';
 import { HPCalcPage } from '@routes/hp_calc';
-
 import { Http404Page } from '@routes/404';
 
 import './app.scss';
@@ -47,6 +47,7 @@ export const App = () => {
                 <Route path='/pokedex/:id' element={<PokedexEntry />} />
                 <Route path='/itemdex' element={<ItemdexPage />} />
                 <Route path='/guides' element={<GuidesPage />} />
+                <Route path='/guides/:id' element={<GuideEntry />} />
                 <Route path='/explorer' element={<ExplorerPage />} />
                 <Route path='/changelog' element={<ChangelogPage />} />
                 <Route path='/tl_calc' element={<TLevelCalcPage />} />
