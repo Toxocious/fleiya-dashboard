@@ -20,6 +20,8 @@ import { ExplorerPage } from '@routes/explorer';
 import { ChangelogPage } from '@routes/changelog';
 import { TLevelCalcPage } from '@routes/tl_calc';
 import { HPCalcPage } from '@routes/hp_calc';
+import { MovedexPage } from '@routes/movedex';
+import { NpcsPage } from '@routes/npcs';
 import { Http404Page } from '@routes/404';
 
 import './app.scss';
@@ -46,12 +48,17 @@ export const App = () => {
                 <Route path='/pokedex' element={<PokedexPage />} />
                 <Route path='/pokedex/:id' element={<PokedexEntry />} />
                 <Route path='/itemdex' element={<ItemdexPage />} />
+                <Route path='/movedex' element={<MovedexPage />} />
+                <Route path='/npcs' element={<NpcsPage />} />
+
                 <Route path='/guides' element={<GuidesPage />} />
                 <Route path='/guides/:id' element={<GuideEntry />} />
-                <Route path='/explorer' element={<ExplorerPage />} />
-                <Route path='/changelog' element={<ChangelogPage />} />
+
                 <Route path='/tl_calc' element={<TLevelCalcPage />} />
                 <Route path='/hp_calc' element={<HPCalcPage />} />
+
+                <Route path='/changelog' element={<ChangelogPage />} />
+                <Route path='/explorer' element={<ExplorerPage />} />
 
                 <Route path='*' element={<Http404Page />} />
               </Routes>

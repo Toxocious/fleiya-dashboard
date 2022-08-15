@@ -75,8 +75,6 @@ export const GuideEntry = () => {
     return <h2>{loadError}</h2>;
   }
 
-  console.log('Guide:', guide);
-
   return (
     <main>
       {guide.headingData?.logo && (
