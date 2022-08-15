@@ -22,6 +22,7 @@
 - [About The Project](#about-the-project)
   - [Tech Stack](#tech-stack)
   - [Features](#features)
+  - [Works In Progress](#works-in-progress)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -53,6 +54,49 @@
   - Calculate the needed Trainer Exp. to go from one trainer level to the next
 - ... and more
 
+### Works In Progress
+- Update Pok&eacute;dex information
+  - Add encounter location data for all Pok&eacute;mon
+  - Add learnable moves for all Pok&eacute;mon
+- Update Itemdex information
+  - What each item does
+  - Obtainable location data for each item
+  - Stack limit (ex: Repel x100, Pok&eacute;ball x300, Reroll Token xUnlimited)
+- List of all NPCs
+  - Where they're found
+  - If they're part of a questline
+  - Pre-requesites to get them to appear
+- Add guides for grinding Trainer Level in all regions
+  - Kanto
+  - Johto
+  - Unova
+- Add guides for regional content
+  - Kanto
+    - Main Content (Start to E4)
+    - Cerulean Valley
+    - Sevii Island
+    - Legendary Pok&eacute;mon
+  - Johto
+    - Main Content (Start to E4)
+    - Resident Evil
+    - Jack Spearow
+    - Legendary Pok&eacute;mon
+    - Battle Frontier
+      - Facilities
+      - Park
+  - Unova
+    - Main Contant (Start to E4)
+    - Castelia Outbreak
+    - Legendary Pok&eacute;mon
+    - Dream World
+  - Destiny Island
+    - Main Content (Start to End)
+- Pok&eacute;mon Team Builder
+  - Very much akin to Showdown's Team Builder, but with some modifications
+  - No level cap for Pok&eacute;mon
+    - Useful for calcing stats of boss-battle Pok&eacute;mon that exceed the level 100 cap
+  - Remove EV cap for Pok&eacute;mon
+    - Useful for calcing stats of enemy Pok&eacute;mon as some are set up with max EVs in all stats
 
 
 ## Getting Started
