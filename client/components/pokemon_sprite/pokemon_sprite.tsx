@@ -7,14 +7,18 @@ import './pokemon_sprite.scss';
 interface iPokemonSprite {
   ID: string;
   Pokemon: string;
-  Forme: string;
+  Forme: string | null;
   Pokedex_ID: string;
   Alt_ID: string;
 }
 
-export const PokemonSprite = (props: iPokemonSprite) => {
-  const { ID, Pokemon, Forme, Pokedex_ID, Alt_ID } = props;
-
+export const PokemonSprite = ({
+  ID,
+  Pokemon,
+  Forme,
+  Pokedex_ID,
+  Alt_ID,
+}: iPokemonSprite) => {
   const SPECIES_NAME = !Forme ? Pokemon : `${Pokemon} ${Forme}`;
   const ROUTE_PATH = Alt_ID ? Pokedex_ID : `${Pokedex_ID}.${Alt_ID}`;
 

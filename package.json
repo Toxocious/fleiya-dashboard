@@ -1,5 +1,5 @@
 {
-  "name": "pokeone-dashboard",
+  "name": "fleiya-dashboard",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -10,7 +10,10 @@
     "lint-prettier": "prettier --write && git add"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.3",
+    "@prisma/client": "^4.1.1",
+    "@trpc/client": "^9.26.2",
+    "@trpc/react": "^9.26.2",
+    "@trpc/server": "^9.26.2",
     "axios": "^0.27.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
@@ -19,14 +22,16 @@
     "mongoose": "^6.4.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-redux": "^8.0.2",
+    "react-markdown": "^8.0.3",
+    "react-query": "3",
     "react-router-dom": "^6.3.0",
-    "redux": "^4.2.0",
     "sass": "^1.54.0",
     "tabler-icons-react": "^1.52.0",
     "ts-node": "^10.9.1",
     "vite": "^2.9.9",
-    "vite-tsconfig-paths": "^3.5.0"
+    "vite-plugin-markdown": "^2.1.0",
+    "vite-tsconfig-paths": "^3.5.0",
+    "zod": "^3.17.10"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
@@ -40,6 +45,7 @@
     "nodemon": "^2.0.19",
     "pre-commit": "^1.2.2",
     "prettier": "^2.7.1",
+    "prisma": "^4.1.1",
     "typescript": "^4.6.3"
   },
   "pre-commit": "lint-prettier"

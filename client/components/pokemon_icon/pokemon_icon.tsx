@@ -9,6 +9,7 @@ interface iPokemonIcon {
   Pokedex_ID: string;
   Alt_ID: string;
   Has_Link: boolean;
+  onClick: React.MouseEventHandler<HTMLElement>;
 }
 
 export const PokemonIcon = ({
@@ -18,6 +19,7 @@ export const PokemonIcon = ({
   Pokedex_ID,
   Alt_ID,
   Has_Link,
+  onClick,
 }: iPokemonIcon) => {
   const SPECIES_NAME = !Forme ? Pokemon : `${Pokemon} ${Forme}`;
   const ROUTE_PATH = Alt_ID ? Pokedex_ID : `${Pokedex_ID}.${Alt_ID}`;
@@ -38,7 +40,7 @@ export const PokemonIcon = ({
   }
 
   return (
-    <div key={ID} className='button disabled pokemon-icon'>
+    <div key={ID} className='button pokemon-icon' onClick={onClick}>
       <img src={ENTRY_SPRITES.Icon} alt={Pokemon} />
     </div>
   );

@@ -57,6 +57,7 @@
   "include": [
     "./vite.config.ts",
     "./client/**/*",
+    "./static/**/*",
   ],
   "exclude": [
     "./server/**/*"

@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("ATLAS_URI")
+}
+
+model pokemon {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  ID         String
+  Pokedex_ID String
+  Alt_ID     String
+  Pokemon    String
+  Forme      String?
+
+  Type_Primary   String
+  Type_Secondary String?
+
+  Ability_1      String
+  Ability_2      String?
+  Hidden_Ability String?
+
+  HP           String
+  Attack       String
+  Defense      String
+  SpAttack     String
+  SpDefense    String
+  Speed        String
+  EV_HP        String
+  EV_Attack    String
+  EV_Defense   String
+  EV_SpAttack  String
+  EV_SpDefense String
+  EV_Speed     String
+
+  Male       String
+  Female     String
+  Genderless String
+
+  Height String
+  Weight String
+
+  Base_Happiness String
+  Catch_Rate     String
+  Exp_Yield      String
+
+  Egg_Cycles  String
+  Egg_Group_1 String
+  Egg_Group_2 String
+
+  Is_Baby      String
+  Is_Mythical  String
+  Is_Legendary String
+
+  Order String
+}

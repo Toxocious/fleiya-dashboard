@@ -22,6 +22,7 @@
 - [About The Project](#about-the-project)
   - [Tech Stack](#tech-stack)
   - [Features](#features)
+  - [Works In Progress](#works-in-progress)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -33,20 +34,15 @@
 
 ## About The Project
 ### Tech Stack
-**Client**
 - Node.js
 - React
 - TypeScript
 - Express
+- Prisma
 - MongoDB
 - Axios
-- Redux
+- tRPC
 
-**Server**
-- Node.js
-- Express
-- MongoDB
-- TypeScript
 
 ### Features
 - Tracks the latest news in game, such as event releases or new regions
@@ -58,6 +54,49 @@
   - Calculate the needed Trainer Exp. to go from one trainer level to the next
 - ... and more
 
+### Works In Progress
+- Update Pok&eacute;dex information
+  - Add encounter location data for all Pok&eacute;mon
+  - Add learnable moves for all Pok&eacute;mon
+- Update Itemdex information
+  - What each item does
+  - Obtainable location data for each item
+  - Stack limit (ex: Repel x100, Pok&eacute;ball x300, Reroll Token xUnlimited)
+- List of all NPCs
+  - Where they're found
+  - If they're part of a questline
+  - Pre-requesites to get them to appear
+- Add guides for grinding Trainer Level in all regions
+  - Kanto
+  - Johto
+  - Unova
+- Add guides for regional content
+  - Kanto
+    - Main Content (Start to E4)
+    - Cerulean Valley
+    - Sevii Island
+    - Legendary Pok&eacute;mon
+  - Johto
+    - Main Content (Start to E4)
+    - Resident Evil
+    - Jack Spearow
+    - Legendary Pok&eacute;mon
+    - Battle Frontier
+      - Facilities
+      - Park
+  - Unova
+    - Main Contant (Start to E4)
+    - Castelia Outbreak
+    - Legendary Pok&eacute;mon
+    - Dream World
+  - Destiny Island
+    - Main Content (Start to End)
+- Pok&eacute;mon Team Builder
+  - Very much akin to Showdown's Team Builder, but with some modifications
+  - No level cap for Pok&eacute;mon
+    - Useful for calcing stats of boss-battle Pok&eacute;mon that exceed the level 100 cap
+  - Remove EV cap for Pok&eacute;mon
+    - Useful for calcing stats of enemy Pok&eacute;mon as some are set up with max EVs in all stats
 
 
 ## Getting Started
@@ -86,12 +125,27 @@ cd PATH/TO/fleiya-dashboard
 yarn install
 ```
 
-4. Start up the client and server (uses the Concurrently npm package).
+4. Set up en empty MongoDB cluster and set the connection URI in the `./.env` file in the root directory, as well as assign a dedicated port.
+```sh
+## MongoDB connection URI
+## Yours will be unique; copy it here and edit it as neccessary
+ATLAS_URI='mongodb+srv://<USERNAME>:<PASSWORD>@pokeone-cluster.8h5mgay.mongodb.net/pokeone?retryWrites=true&w=majority';
+
+## Port to run MongoDB instance on
+MONGODB_PORT = 5000;
+```
+
+5. Generate Prisma schema
+```sh
+npx prisma generate
+```
+
+6. Start up the client and server (uses the Concurrently npm package).
 ```sh
 yarn dev
 ```
 
-5. Visit the links displayed in your terminal to see the client-side and server-side
+7. Visit the links displayed in your terminal to see the client-side and server-side
 
 
 

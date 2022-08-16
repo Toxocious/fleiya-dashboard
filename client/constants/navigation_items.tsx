@@ -1,4 +1,14 @@
-import { Home, Apps, Database, Tools } from 'tabler-icons-react';
+import { Home, Apps, Database, Tools, Icon } from 'tabler-icons-react';
+
+export type NavigationItemType = {
+  id: number;
+  label: string;
+  icon: any;
+  link?: string;
+  active?: boolean;
+  links: Array<NavigationItemType>;
+  hidden?: boolean;
+};
 
 export const NavigationItems = [
   {
@@ -10,7 +20,7 @@ export const NavigationItems = [
     links: [],
   },
   {
-    id: 7,
+    id: 1,
     label: 'Guides',
     link: '/guides',
     icon: Apps,
@@ -18,44 +28,68 @@ export const NavigationItems = [
     links: [],
   },
   {
-    id: 4,
+    id: 2,
     label: 'National Dex',
-    link: '/',
     icon: Database,
     active: false,
     links: [
       {
-        id: 5,
+        id: 4,
         label: 'Pokedex',
         link: '/pokedex',
+        icon: '',
+        links: [],
+      },
+      {
+        id: 5,
+        label: 'Itemdex',
+        link: '/itemdex',
+        icon: '',
+        links: [],
       },
       {
         id: 6,
-        label: 'Itemdex',
-        link: '/itemdex',
+        label: 'Movedex',
+        link: '/movedex',
+        icon: '',
+        links: [],
+      },
+      {
+        id: 7,
+        label: 'NPCs',
+        link: '/npcs',
+        icon: '',
+        links: [],
       },
     ],
   },
   {
-    id: 8,
+    id: 3,
     label: 'Tools',
     icon: Tools,
     active: false,
     links: [
       {
-        id: 9,
+        id: 8,
         label: 'Hidden Power Calculator',
         link: '/hp_calc',
+        icon: '',
+        links: [],
+      },
+      {
+        id: 9,
+        label: 'Trainer Level Calculator',
+        link: '/tl_calc',
+        icon: '',
+        links: [],
       },
       {
         id: 10,
-        label: 'Trainer Level Calculator',
-        link: '/tl_calc',
-      },
-      {
-        id: 11,
         label: 'Pokemon Stat Calc',
         link: '/pkmn_calc',
+        icon: '',
+        links: [],
+        hidden: true,
       },
     ],
   },

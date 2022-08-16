@@ -95,8 +95,25 @@
   }
 
   & > span {
+    transition: width 100ms ease-in-out;
+
     border-radius: 0.5em;
     height: 14px;
+  }
+
+  & > div {
+    transition: width 100ms ease-in-out;
+
+    background-color: rgba(126, 126, 126, 0.5);
+
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    padding: 0 6px;
+    right: 0;
+    width: 30px;
+
+    position: absolute;
+    text-align: center;
   }
 }
 

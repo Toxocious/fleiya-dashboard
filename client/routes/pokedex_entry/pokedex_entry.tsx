@@ -1,9 +1,8 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { ChevronRight, Settings } from 'tabler-icons-react';
 
-import { GET_POKEDEX_ENTRY } from '@actions/pokedex_entry';
+import { trpc } from '@hooks/trpc';
 
 import { LoadingSvg } from '@components/loading_svg';
 import { PokemonIcon } from '@components/pokemon_icon';
@@ -13,66 +12,158 @@ import { ProgressBar } from '@components/progress_bar';
 import { Card } from '@components/card';
 
 export const PokedexEntry = () => {
-  const dispatch = useDispatch();
+  const [selectedSpecies, setSelectedSpecies]: [any, any] = useState({});
 
   const ROUTE_PARAMS = useParams();
-  const SPECIES_ID: any = ROUTE_PARAMS.id;
+  const SPECIES_ID: string = ROUTE_PARAMS.id ?? '1';
 
-  useEffect(() => {
-    // @ts-ignore
-    dispatch(GET_POKEDEX_ENTRY(SPECIES_ID ?? 1));
-  }, [dispatch]);
+  const { data } = trpc.useQuery([
+    'pokemon.getPokemon',
+    { POKEDEX_ID: SPECIES_ID },
+  ]);
 
-  const ENTRY: any = useSelector((state) => state);
-  const LEADING_ENTRY: any = ENTRY?.POKEDEX_ENTRIES?.payload?.[0];
+  if (typeof data === 'undefined') {
+    return <LoadingSvg fullPage />;
+  }
+
+  let speciesData: any = data[0];
+  if (Object.keys(selectedSpecies).length > 0) {
+    speciesData = selectedSpecies;
+  }
 
   return (
-    <>
-      {typeof ENTRY.POKEDEX_ENTRIES.payload == 'undefined' ? (
-        <LoadingSvg />
-      ) : (
-        <main>
-          <div className='page-header'>
-            <h2>
-              Pok&eacute;dex <ChevronRight /> {LEADING_ENTRY.Pokemon}
-            </h2>
+    <main>
+      <div className='page-header'>
+        <h2>
+          Pok&eacute;dex <ChevronRight /> {speciesData.Pokemon}
+        </h2>
 
-            <aside>
-              <button>
-                <Settings />
-              </button>
-            </aside>
+        <aside>
+          <button>
+            <Settings />
+          </button>
+        </aside>
+      </div>
+
+      <section className='flex row space-around'>
+        <div className='flex col'>
+          <Card variant='flex-center column' background='grassland'>
+            <Card.Section
+              style={{
+                height: '12em',
+              }}
+            >
+              <PokemonSprite
+                ID={speciesData.ID}
+                Pokemon={speciesData.Pokemon}
+                Forme={speciesData.Forme}
+                Pokedex_ID={speciesData.Pokedex_ID}
+                Alt_ID={speciesData.Alt_ID}
+              />
+            </Card.Section>
+          </Card>
+
+          <div className='flex row'>
+            {data.length > 0 &&
+              data.map((FORME: any) => {
+                return (
+                  <PokemonIcon
+                    onClick={() => setSelectedSpecies(FORME)}
+                    key={FORME.Alt_ID}
+                    {...FORME}
+                  />
+                );
+              })}
+          </div>
+        </div>
+
+        <div>
+          <h2 className='separator'>
+            <span>Base Stats</span>
+          </h2>
+
+          <table>
+            <tbody>
+              {[
+                'HP',
+                'Attack',
+                'Defense',
+                'SpAttack',
+                'SpDefense',
+                'Speed',
+              ].map((stat) => (
+                <tr key={stat}>
+                  <td>
+                    <b>{stat}</b>
+                  </td>
+                  <td>
+                    <ProgressBar
+                      // @ts-ignore
+                      currentValue={parseInt(speciesData[stat])}
+                      maxValue={258}
+                      stat={stat}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <br />
+
+      <section>
+        <div>
+          <h2 className='separator'>
+            <span>Misc. Stats</span>
+          </h2>
+        </div>
+
+        <div className='flex row top text-center'>
+          <div>
+            <h2>Abilities</h2>
+            <table className='styled text-center'>
+              <thead>
+                <tr>
+                  <th colSpan={3}></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ability 1</td>
+                  <td>Ability 2</td>
+                  <td>Hidden</td>
+                </tr>
+                <tr>
+                  {['Ability_1', 'Ability_2', 'Hidden_Ability'].map(
+                    (ability) => (
+                      <td key={ability}>{speciesData[ability] ?? 'N/A'}</td>
+                    )
+                  )}
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <section className='flex row space-around'>
-            <div className='flex col'>
-              <Card variant='flex-center column' background='grassland'>
-                <Card.Section
-                  style={{
-                    height: '12em',
-                  }}
-                >
-                  <PokemonSprite {...LEADING_ENTRY} />
-                </Card.Section>
-              </Card>
-
-              <div className='flex row'>
-                {ENTRY.POKEDEX_ENTRIES.payload.length > 0 &&
-                  ENTRY.POKEDEX_ENTRIES.payload.map((FORME: any) => {
-                    if (FORME.Alt_ID != 0) {
-                      return <PokemonIcon key={FORME._id} {...FORME} />;
-                    }
-                  })}
-              </div>
-            </div>
-
-            <div>
-              <h2 className='separator'>
-                <span>Base Stats</span>
-              </h2>
-
-              <table>
-                <tbody>
+          <div>
+            <h2>EV Yield</h2>
+            <table className='styled text-center'>
+              <thead>
+                <tr>
+                  <th colSpan={6}></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>HP</td>
+                  <td>Atk</td>
+                  <td>Def</td>
+                  <td>SpA</td>
+                  <td>SpD</td>
+                  <td>Spd</td>
+                </tr>
+                <tr>
                   {[
                     'HP',
                     'Attack',
@@ -80,64 +171,53 @@ export const PokedexEntry = () => {
                     'SpAttack',
                     'SpDefense',
                     'Speed',
-                  ].map((stat) => (
-                    <tr key={stat}>
-                      <td>
-                        <b>{stat}</b>
-                      </td>
-                      <td>
-                        <ProgressBar
-                          currentValue={parseInt(LEADING_ENTRY[stat])}
-                          maxValue={258}
-                          stat={stat}
-                        />
-                      </td>
-                    </tr>
+                  ].map((ev_stat) => (
+                    <td key={ev_stat}>{speciesData[`EV_${ev_stat}`] ?? 0}</td>
                   ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
 
-          <br />
+      <br />
 
-          <section>
-            <div>
-              <h2 className='separator'>
-                <span>Obtainable Locations</span>
-              </h2>
-            </div>
+      <section>
+        <div>
+          <h2 className='separator'>
+            <span>Obtainable Locations</span>
+          </h2>
+        </div>
 
-            <div className='flex col'>
-              <table className='styled wide text-center'>
-                <thead>
-                  <tr>
-                    <th>Map Name</th>
-                    <th>Time Of Day</th>
-                    <th>Encounter Odds</th>
-                  </tr>
-                </thead>
+        <div className='flex col'>
+          <table className='styled wide text-center'>
+            <thead>
+              <tr>
+                <th>Map Name</th>
+                <th>Time Of Day</th>
+                <th>Encounter Odds</th>
+              </tr>
+            </thead>
 
-                <tbody>
-                  {[1, 2, 3, 4, 5, 6, 7].map((item) => (
-                    <tr key={item}>
-                      <td>Random Zone #{item}</td>
-                      <td>
-                        {Math.floor(Math.random() * 4) <= 1 ? (
-                          <b>Morning</b>
-                        ) : (
-                          <b>Evening</b>
-                        )}
-                      </td>
-                      <td>{Math.floor(Math.random() * 15)}%</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-        </main>
-      )}
-    </>
+            <tbody>
+              {[1, 2, 3, 4, 5, 6, 7].map((item) => (
+                <tr key={item}>
+                  <td>Random Zone #{item}</td>
+                  <td>
+                    {Math.floor(Math.random() * 4) <= 1 ? (
+                      <b>Morning</b>
+                    ) : (
+                      <b>Evening</b>
+                    )}
+                  </td>
+                  <td>{Math.floor(Math.random() * 15)}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
   );
 };

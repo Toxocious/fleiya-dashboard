@@ -1,0 +1,92 @@
+.guide_card_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+
+  width: 100%;
+
+  & > .guide_card {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    background-color: rgba(var(--ui-monochrome-04-rgb), 1.0);
+    border-radius: 0.5em;
+
+    height: 100%;
+    padding: 0;
+
+    &,
+    & > * {
+      max-width: 300px;
+      width: 300px;
+    }
+
+    & > .guide_logo {
+      border-top-left-radius: 0.5em;
+      border-top-right-radius: 0.5em;
+
+      position: relative;
+
+      max-height: 100px;
+      width: 100%;
+
+      &.no-logo {
+        background: linear-gradient(
+          rgb(var(--ui-monochrome-05-rgb)),
+          rgb(var(--ui-monochrome-04-rgb))
+        );
+
+        height: 100px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+          content: 'No Image';
+          font-size: 2em;
+        }
+      }
+
+      & > * {
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
+      }
+
+      & > img {
+        object-fit: cover;
+
+        max-height: 100px;
+        height: 100px;
+        width: 100%;
+      }
+    }
+
+    & > .guide_content {
+      &.no-logo > .guide_title {
+        border-radius: 0.5em 0.5em 0 0;
+      }
+
+      & > .guide_title {
+        font-weight: bold;
+        text-align: center;
+
+        font-size: 1em;
+        padding: 0.5em 0;
+
+        background: linear-gradient(
+          rgb(var(--ui-monochrome-04-rgb)),
+          rgb(var(--ui-monochrome-01-rgb))
+        );
+      }
+
+      & > .guide_description {
+        text-align: center;
+        padding: 0.5em;
+      }
+    }
+  }
+}
