@@ -29,3 +29,21 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 450px) {
+  .spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    height: 100vh;
+    width: 100%;
+
+    position: absolute;
+    z-index: 1000000;
+
+    background: rgba(var(--ui-monochrome-05-rgb), 0.5);
+  }
+}
