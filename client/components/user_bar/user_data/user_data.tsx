@@ -1,31 +1,45 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown } from 'tabler-icons-react';
 
 import { Dropdown } from '@components/dropdown';
+import { getGitHubUrl, getGoogleUrl } from '@util/get_oauth_urls';
 
 import './user_data.scss';
 
-const mock_user = {
-  user_id: 1,
-  user_name: 'Toxocious',
-  membership: 'Premium',
-  avatar: '/avatar.jpeg',
-  links: [
-    {
-      id: 1,
-      label: 'Settings',
-      link: '/settings',
-    },
-    {
-      id: 2,
-      label: 'Log Out',
-      link: '/logout',
-    },
-  ],
-};
-
 export const UserData = () => {
+  const location = useLocation();
+  const from = ((location.state as any)?.from.pathname as string) || '/profile';
+
   const [showDropdown, setShowDropdown] = useState(false);
+
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userAvatar, setUserAvatar] = useState('/default_avatar.png');
+  const [userLinks, setUserLinks] = useState([
+    {
+      id: 0,
+      label: 'Login With Google',
+      link: getGoogleUrl(from),
+      offSite: true,
+    },
+  ]);
+
+  if (loggedIn) {
+    setUserLinks([
+      {
+        id: 1,
+        label: 'Settings',
+        link: '/settings',
+        offSite: false,
+      },
+      {
+        id: 2,
+        label: 'Log Out',
+        link: '/logout',
+        offSite: false,
+      },
+    ]);
+  }
 
   return (
     <section
@@ -34,11 +48,11 @@ export const UserData = () => {
       onMouseLeave={() => setShowDropdown(false)}
     >
       <div>
-        <img src={mock_user.avatar} />
+        <img src={userAvatar} />
         <ChevronDown size={14} />
       </div>
 
-      <Dropdown links={mock_user.links} hidden={!showDropdown} />
+      <Dropdown links={userLinks} hidden={!showDropdown} />
     </section>
   );
 };

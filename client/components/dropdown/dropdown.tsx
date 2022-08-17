@@ -2,14 +2,28 @@ import { Link } from 'react-router-dom';
 
 import './dropdown.scss';
 
-export const Dropdown = (props: any) => {
-  const { links, hidden } = props;
+type DropdownType = {
+  links: Array<LinkType>;
+  hidden: Boolean;
+};
 
+type LinkType = {
+  id: number;
+  label: string;
+  link: string;
+  offSite: boolean;
+};
+
+export const Dropdown = ({ links, hidden }: DropdownType) => {
   return (
     <div className={'dropdown' + (hidden ? ' hidden' : '')}>
-      {links.map((link: any) => (
+      {links.map((link: LinkType) => (
         <div key={link.label}>
-          <Link to={link.link}>{link.label}</Link>
+          {link.offSite ? (
+            <a href={link.link}>{link.label}</a>
+          ) : (
+            <Link to={link.link}>{link.label}</Link>
+          )}
         </div>
       ))}
     </div>

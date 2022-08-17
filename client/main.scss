@@ -47,7 +47,16 @@ html {
 
   color-scheme: light dark;
   color: var(--syntax-white);
+
   background-color: rgb(var(--ui-monochrome-01-rgb));
+  background: linear-gradient(
+    180deg,
+    rgb(var(--ui-monochrome-01-rgb)) 0%,
+    rgb(var(--ui-monochrome-02-rgb)) 25%,
+    rgb(var(--ui-monochrome-03-rgb)) 50%,
+    rgb(var(--ui-monochrome-02-rgb)) 75%,
+    rgb(var(--ui-monochrome-01-rgb)) 100%
+  );
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
