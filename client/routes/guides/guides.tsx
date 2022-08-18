@@ -4,9 +4,9 @@ import { GuideCard } from '@components/guide_card';
 
 let IMPORTED_GUIDES: any;
 if (import.meta.env.DEV) {
-  IMPORTED_GUIDES = import.meta.glob('../../../static/guides/**/*.md');
+  IMPORTED_GUIDES = import.meta.glob('../../../static/guides/**/**/*.md');
 } else if (import.meta.env.PROD) {
-  IMPORTED_GUIDES = import.meta.glob('/static/guides/**/*.md');
+  IMPORTED_GUIDES = import.meta.glob('/static/guides/**/**/*.md');
 } else {
   IMPORTED_GUIDES = [];
 }

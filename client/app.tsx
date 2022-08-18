@@ -52,7 +52,7 @@ export const App = () => {
                 <Route path='/npcs' element={<NpcsPage />} />
 
                 <Route path='/guides' element={<GuidesPage />} />
-                <Route path='/guides/:id' element={<GuideEntry />} />
+                <Route path='/guides/:category/:id' element={<GuideEntry />} />
 
                 <Route path='/tl_calc' element={<TLevelCalcPage />} />
                 <Route path='/hp_calc' element={<HPCalcPage />} />

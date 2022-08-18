@@ -23,6 +23,7 @@ type guideType = {
     title: string;
     description: string;
     logo?: string | undefined;
+    category: string;
   } | null;
   content: string | null;
 };
@@ -43,10 +44,10 @@ export const GuideEntry = () => {
     content: null,
   });
 
-  const file_name = useParams().id;
+  const { category, id } = useParams();
 
   useEffect(() => {
-    fetch(`${IMPORT_PATH}/${file_name}/${file_name}.md`)
+    fetch(`${IMPORT_PATH}/${category}/${id}/${id}.md`)
       .then((res: Response) => res.text())
       .then((res) => {
         const parsed_markdown: any = MarkdownParser(res);
@@ -56,6 +57,7 @@ export const GuideEntry = () => {
             logo: parsed_markdown.logo,
             description: parsed_markdown.description,
             title: parsed_markdown.title,
+            category: parsed_markdown.category,
           },
           content: parsed_markdown.content,
         });
@@ -79,7 +81,7 @@ export const GuideEntry = () => {
     <main>
       {guide.headingData?.logo && (
         <div className='guide_banner'>
-          <img src={`/guides/${file_name}/${file_name}.png`} />
+          <img src={`/guides/${category}/${id}/${id}.png`} />
         </div>
       )}
 

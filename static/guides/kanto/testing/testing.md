@@ -2,6 +2,7 @@
 title: Testing
 description: Testing guide markdown file
 logo: testing
+category: kanto
 ---
 
 ## Description
