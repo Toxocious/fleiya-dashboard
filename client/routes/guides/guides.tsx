@@ -12,7 +12,8 @@ if (import.meta.env.DEV) {
 }
 
 export const GuidesPage = () => {
-  const [guides, setGuides]: [any, any] = useState({
+  const [filter, setFilter] = useState('general');
+  const [guides, setGuides] = useState({
     list: [],
   });
 
@@ -40,6 +41,19 @@ export const GuidesPage = () => {
     fetchGuides();
   }, []);
 
+  const FILTERED_LIST: Array<Object> = guides.list.filter(
+    (guide: any) => guide.data.category === filter
+  );
+
+  let LIST_ELEMENTS: any;
+  if (FILTERED_LIST.length > 0) {
+    LIST_ELEMENTS = FILTERED_LIST.map((guide: any) => (
+      <GuideCard key={guide.data.title} path={guide.path} {...guide.data} />
+    ));
+  } else {
+    LIST_ELEMENTS = <h2>There are no {filter.toLocaleUpperCase()} guides.</h2>;
+  }
+
   return (
     <main>
       <h2 className='separator'>
@@ -55,26 +69,27 @@ export const GuidesPage = () => {
         play through.
         <br />
         <br />
-        Click on any guide entry for more information.
+        Click on any guide entry for more information, or click one of the
+        buttons below to filter through the guides based on category.
       </div>
 
       <br />
 
-      <div className='guide_card_container'>
-        {guides.list.length === 0 ? (
-          <>
-            <h2>No Guides Were Found</h2>
-          </>
-        ) : (
-          guides.list.map((guide: any) => (
-            <GuideCard
-              key={guide.data.title}
-              path={guide.path}
-              {...guide.data}
-            />
-          ))
-        )}
+      <div className='flex row center'>
+        {['General', 'Kanto', 'Johto', 'Sinnoh', 'Unova'].map((category) => (
+          <button
+            key={category}
+            onClick={() => setFilter(category.toLowerCase())}
+            className={filter === category.toLowerCase() ? 'active' : ''}
+          >
+            {category}
+          </button>
+        ))}
       </div>
+
+      <br />
+
+      <div className='guide_card_container'>{LIST_ELEMENTS}</div>
     </main>
   );
 };

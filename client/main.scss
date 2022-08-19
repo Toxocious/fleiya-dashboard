@@ -313,6 +313,12 @@ button,
     }
   }
 
+  &.active {
+    background-color: rgba(var(--ui-monochrome-06-rgb), 0.5);
+    color: #FFF;
+    box-shadow: 0 0 0 1px var(--ui-gold);
+  }
+
   &.disabled {
     background-color: #FFFFFF0D;
     color: #FFF6;
