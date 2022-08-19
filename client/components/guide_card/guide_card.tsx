@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './guide_card.scss';
 
 type GuideCardType = {
+  path: string;
   category: string;
   title: string;
   description: string;
@@ -10,12 +11,15 @@ type GuideCardType = {
 };
 
 export const GuideCard = ({
+  path,
   category,
   title,
   description,
   logo,
 }: GuideCardType) => {
-  const FILE_NAME = title.replace(' ', '-').toLowerCase();
+  const FILE_NAME = path
+    .split('/')
+    [path.split('/').length - 1].replace('.md', '');
 
   return (
     <Link className='button guide_card' to={`/guides/${category}/${FILE_NAME}`}>

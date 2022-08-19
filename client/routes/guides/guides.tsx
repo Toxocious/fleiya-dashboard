@@ -67,7 +67,11 @@ export const GuidesPage = () => {
           </>
         ) : (
           guides.list.map((guide: any) => (
-            <GuideCard key={guide.data.title} {...guide.data} />
+            <GuideCard
+              key={guide.data.title}
+              path={guide.path}
+              {...guide.data}
+            />
           ))
         )}
       </div>

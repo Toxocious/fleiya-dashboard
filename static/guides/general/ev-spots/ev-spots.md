@@ -1,5 +1,5 @@
 ---
-title: EV Spots
+title: EV Training Spots
 description: The best spots for EV training!
 category: general
 ---
