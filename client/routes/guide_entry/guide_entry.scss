@@ -13,4 +13,8 @@
 
 .guide_content {
   max-width: 100%;
+
+  & table {
+    width: min(1000px, 100%);
+  }
 }

@@ -25,6 +25,7 @@
     "react-markdown": "^8.0.3",
     "react-query": "3",
     "react-router-dom": "^6.3.0",
+    "remark-gfm": "^3.0.1",
     "sass": "^1.54.0",
     "tabler-icons-react": "^1.52.0",
     "ts-node": "^10.9.1",

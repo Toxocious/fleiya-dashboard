@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 import { LoadingSvg } from '@components/loading_svg';
 
@@ -90,7 +91,7 @@ export const GuideEntry = () => {
       </h2>
 
       <div className='guide_content'>
-        <ReactMarkdown>{guide.content}</ReactMarkdown>
+        <ReactMarkdown children={guide.content} remarkPlugins={[remarkGfm]} />
       </div>
     </main>
   );
