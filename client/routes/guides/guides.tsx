@@ -16,11 +16,21 @@ export const GuidesPage = () => {
   const [guides, setGuides] = useState({
     list: [],
   });
+  const [numOfGuides, setNumOfGuides] = useState([0, 0, 0, 0, 0]);
 
   const GUIDES_LIST: Array<Object> = [];
 
   useEffect(() => {
     const fetchGuides = () => {
+      let guide_nums = numOfGuides;
+      let map = {
+        general: 0,
+        kanto: 1,
+        johto: 2,
+        sinnoh: 3,
+        unova: 4,
+      };
+
       Object.entries(IMPORTED_GUIDES).forEach(
         async ([path, mod]: [any, any]) => {
           const mod_data: any = await mod();
@@ -30,10 +40,17 @@ export const GuidesPage = () => {
             data: mod_data.attributes,
           });
 
+          const guide_category = path.split('/guides/')[1].split('/')[0];
+
+          // @ts-ignore
+          guide_nums[map[guide_category]]++;
+
           setGuides((guides: any) => ({
             ...guides,
             list: GUIDES_LIST,
           }));
+
+          setNumOfGuides([...guide_nums]);
         }
       );
     };
@@ -76,15 +93,17 @@ export const GuidesPage = () => {
       <br />
 
       <div className='flex row center'>
-        {['General', 'Kanto', 'Johto', 'Sinnoh', 'Unova'].map((category) => (
-          <button
-            key={category}
-            onClick={() => setFilter(category.toLowerCase())}
-            className={filter === category.toLowerCase() ? 'active' : ''}
-          >
-            {category}
-          </button>
-        ))}
+        {['General', 'Kanto', 'Johto', 'Sinnoh', 'Unova'].map(
+          (category, index) => (
+            <button
+              key={category}
+              onClick={() => setFilter(category.toLowerCase())}
+              className={filter === category.toLowerCase() ? 'active' : ''}
+            >
+              {category} ({numOfGuides[index]})
+            </button>
+          )
+        )}
       </div>
 
       <br />
