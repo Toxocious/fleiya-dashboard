@@ -12,7 +12,7 @@ This guide will show you the absolute best spots in each region for EV training 
 ## Kanto
 | Stat | Yield | Location | Method | Pok&eacute;mon |
 | :-: | :-: | :-: | :-: | :-: |
-| HP | N/A | N/A | N/A | N/A |
+| HP | 1 | Viridian Forest | Walking | ![Caterpie](/pokemon/icons/010.png "Caterpie") |
 | Attack | 1 to 2 | Route 9 | Walking | ![Nidoran M](/pokemon/icons/032.png "Nidoran M") ![Nidorino](/pokemon/icons/033.png "Nidorino") ![Mankey](/pokemon/icons/056.png "Mankey") ![Ekans](/pokemon/icons/023.png "Ekans") |
 |  | 1 to 2 | Mt. Silver 1F | Surfing | ![Goldeen](/pokemon/icons/118.png "Goldeen") ![Seaking](/pokemon/icons/119.png "Seaking") ![Gyarados](/pokemon/icons/130.png "Gyarados") |
 | Defense | 1 | Route 21 | Walking | ![Tangela](/pokemon/icons/114.png "Tangela") |
