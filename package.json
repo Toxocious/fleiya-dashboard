@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "server": "nodemon ./server/index.ts",
-    "client": "vite ./client/",
+    "client": "vite ./client",
     "build": "tsc && vite build",
     "lint-prettier": "prettier --write && git add"
   },
